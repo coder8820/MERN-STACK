@@ -1,4 +1,0 @@
-# this is React Series, and we will learn everything about React.js
-# Why React js?
-#React is declearative bc it describe what the ui should look like rather than how to achieveit.
-# This makes the code easier to read and maintain,
