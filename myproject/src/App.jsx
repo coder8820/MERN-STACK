@@ -1,10 +1,25 @@
+import { Cards } from "./Components/Cards"
+
 export const App = () =>{
   return(
     <div>
-      <h1>Welcome to My Project</h1>
-      <p>This is a simple React application.</p>
-      <p>Feel free to explore and modify the code!</p>
-      <p>Happy coding!</p>
+      <h1>My Movie App</h1>
+      <h2>Top Rated Movies</h2>
+      <Netflix/>
+      <Cards/>
+      <Cards/>
+      <Cards/>
+      <Cards/>
+    </div>
+  )
+}
+
+
+const Netflix = () =>{
+  return(
+    <div>
+      <h1>Netflix</h1>
+      <Cards/>
     </div>
   )
 }
