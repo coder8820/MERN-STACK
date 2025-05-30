@@ -1,15 +1,9 @@
-import { Cards } from "./Components/NetflixSeries"
-import { Condition } from "./Components/Conditional"
-import Headers  from "./Components/Header" // Default imported component
-import { FooterSection } from "./Components/Footer"
+import { NetflixSeries } from "./Components/NetflixSeries"
 
 export const App = () =>{
   return(
     <>
-      <Headers/>
-      <Cards/>
-      <Cards/>
-      <FooterSection/>
+      <NetflixSeries/>
     </>
   )
 }

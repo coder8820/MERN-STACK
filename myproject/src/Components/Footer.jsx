@@ -8,3 +8,13 @@ export const FooterSection = () => {
         </>
     )
 }
+
+export const Footer = () =>{
+    return(
+        <>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, tempora.</p>
+            </div>
+        </>
+    )
+}
