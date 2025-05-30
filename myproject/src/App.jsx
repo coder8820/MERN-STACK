@@ -1,11 +1,11 @@
-import { Cards } from "./Components/Cards"
+import { Cards } from "./Components/NetflixSeries"
 import { Condition } from "./Components/Conditional"
+import Headers  from "./Components/Header"
 
 export const App = () =>{
   return(
     <>
-      <h1>My Movie App</h1>
-      <h2>Top Rated Movies</h2>
+      <Headers/>
       <Cards/>
       <Condition/>
     </>
