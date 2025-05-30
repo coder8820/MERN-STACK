@@ -7,7 +7,6 @@ export const App = () =>{
       <h1>My Movie App</h1>
       <h2>Top Rated Movies</h2>
       <Cards/>
-      <Cards/>
       <Condition/>
     </>
   )
