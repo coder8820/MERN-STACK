@@ -5,9 +5,12 @@ export const Profile = () => {
       <ProfileCard
         name="coder"
         age={23}
+        img = "images/profile.jpg"
         greeting={
           <div>
-            <strong>Het coder, keep up the great work!</strong>
+            <strong>Hey! coder, keep up the great work!</strong>
+            <p>Welcome to the coding world!</p>
+            <p>Keep learning and growing!</p>
           </div>
         }
       >
@@ -22,6 +25,7 @@ function ProfileCard(props) {
   return (
     <>
       <h2>Name: {props.name}</h2>
+      <img src={props.img} alt="Profile" />
       <p>Age: {props.age}</p>
       <p>{props.greeting}</p>
       <div>{props.children}</div>
