@@ -1,3 +1,4 @@
+import '../Components/Netflix.css'
 export const SeriesCard = ( {data} ) => {
     // destructing the data object to extract properties
     const {img_url,name,rating,description,genre,cast} = data;
@@ -11,7 +12,7 @@ export const SeriesCard = ( {data} ) => {
       <p>Summary: {description}</p>
       <p>Genre: {genre}</p>
       <p>Cast: {cast}</p>
-      <button>Watch Now</button>
+      <button className="card-btn">Watch Now</button>
     </li>
   );
 };
