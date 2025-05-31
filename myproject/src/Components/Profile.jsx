@@ -21,14 +21,14 @@ export const Profile = () => {
   );
 };
 
-function ProfileCard(props) {
+function ProfileCard({img, name, age, greeting,children}) {
   return (
     <>
-      <h2>Name: {props.name}</h2>
-      <img src={props.img} alt="Profile" />
-      <p>Age: {props.age}</p>
-      <p>{props.greeting}</p>
-      <div>{props.children}</div>
+      <img src={img} alt="Profile" />
+      <h2>Name: {name}</h2>
+      <p>Age: {age}</p>
+      <p>{greeting}</p>
+      <div>{children}</div>
     </>
   );
 }
