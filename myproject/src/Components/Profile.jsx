@@ -24,7 +24,7 @@ export const Profile = () => {
 function ProfileCard({img, name, age, greeting,children}) {
   return (
     <>
-      <img src={img} alt="Profile" />
+      <img className="profile" src={img} alt="Profile" />
       <h2>Name: {name}</h2>
       <p>Age: {age}</p>
       <p>{greeting}</p>
