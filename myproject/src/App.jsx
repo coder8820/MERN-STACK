@@ -1,11 +1,11 @@
-import './index.css'
-import { NetflixSeries } from "./Components/NetflixSeries"
+import "./index.css";
+import { NetflixSeries } from "./Components/NetflixSeries";
 
-export const App = () =>{
-  return(
+export const App = () => {
+  return (
     <>
-    <h1 className="logo">Netflix Series</h1>
-      <NetflixSeries/>
+      <h1 className="logo">Netflix Series</h1>
+      <NetflixSeries />
     </>
-  )
-}
+  );
+};

@@ -7,10 +7,15 @@ export const SeriesCard = ({ data }) => {
   const ratings = {
     color: rating >= 8 ? "green" : rating >= 5 ? "orange" : "red",
     fontWeight: "bold",
+    backgroundColor:`${rating >= 8.5 ? "lightgreen" : rating >= 5 ? "lightyellow" : "lightcoral"}`,
+    borderRadius: "5px",
+    padding: "5px 10px",
   };
   const botton = {
     backgroundColor: rating >= 8 ? "green" : "yellow",
-    color:"black"
+    color:"white",
+    fontWeight: "bold",
+    
   }
   // const actions = {
   //   color: 'blue',
