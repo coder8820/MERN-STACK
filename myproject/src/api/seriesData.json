@@ -22,7 +22,7 @@
     {
       "name": "The Witcher",
       "id": "the-witcher",
-      "img_url": "http://localhost:5173/images/witcher.jpg",
+      "img_url": "http://localhost:5173/images/tw.jpg",
       "rating": "8.2",
       "description": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world.",
       "cast": ["Henry Cavill", "Anya Chalotra", "Freya Allan"],

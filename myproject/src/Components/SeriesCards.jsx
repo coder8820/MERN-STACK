@@ -5,7 +5,7 @@ export const SeriesCard = ( {data} ) => {
   return (
     <li>
       <div>
-        <img src={img_url} alt="Logo" width="40%" height="40%" />
+        <img className='images' src={img_url} alt="Logo" width="40%" height="40%" />
       </div>
       <h1>Name: {name}</h1>
       <h3>Rating: {rating}</h3>
