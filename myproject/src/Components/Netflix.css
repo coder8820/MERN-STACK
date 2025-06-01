@@ -21,3 +21,35 @@
         background-color: red;
         color: black;
     }
+.images{
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+li h1{
+    font-size: 2.2rem;
+    color: var(--heading-color);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+li h3{
+  font-size:1.4rem;
+  color: var(--para-color);
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+}
+li p{
+  font-size: 1.6rem;
+  color: var(--para-color);
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+}
+
+.MainCard{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.content{
+    padding: 2.4rem 1.4rem;
+    border-radius: 0.5rem;
+}
