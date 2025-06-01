@@ -33,12 +33,7 @@ li h1{
     font-weight: 700;
     margin-bottom: 0.6rem;
 }
-li h3{
-  font-size:1.4rem;
-  color: var(--para-color);
-  font-weight: 400;
-  margin-bottom: 0.6rem;
-}
+
 li p{
   font-size: 1.6rem;
   color: var(--para-color);
