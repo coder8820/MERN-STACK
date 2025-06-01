@@ -7,15 +7,16 @@ export const SeriesCard = ({ data }) => {
   const ratings = {
     color: rating >= 8 ? "green" : rating >= 5 ? "orange" : "red",
     fontWeight: "bold",
-    fontSize: "1.2em",
-    margin: "10px 0",
-
+  };
+  const botton = {
+    backgroundColor: rating >= 8 ? "green" : "yellow",
+    color:"black"
   }
-  const actions = {
-    color: 'blue',
-    fontWeight: "bold",
-    margin: "10px 0",
-  }
+  // const actions = {
+  //   color: 'blue',
+  //   fontWeight: "bold",
+  //   margin: "10px 0",
+  // }
 
   return (
     <li className="MainCard">
@@ -30,12 +31,12 @@ export const SeriesCard = ({ data }) => {
       </div>
       <div className="content">
         <h1>Name: {name}</h1>
-        <h3 style={ratings}>Rating: {rating}</h3>
+        <h3>Rating: <span style={ratings}>{rating}</span></h3>
         <p>Summary: {description}</p>
-        <p style={actions}>Genre: {genre}</p>
-        <p>Cast: {cast}</p>
+        <p>Genre: {genre.join(", ")}</p>
+        <p>Cast: {cast.join(", ")}</p>
         <a href={watch_url} target="_blank">
-          <button className="card-btn">Watch Now</button>
+          <button className="card-btn" style={botton}>Watch Now</button>
         </a>
       </div>
     </li>
