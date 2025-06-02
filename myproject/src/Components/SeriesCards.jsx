@@ -6,10 +6,10 @@ export const SeriesCard = ({ data }) => {
 
   // Inline styles for the rating
   const ratings = {
-    color: rating >= 8 ? "green" : rating >= 5 ? "orange" : "red",
+    color: rating >= 8.5 ? "white" : rating >= 5 ? "blue" : "red",
     fontWeight: "bold",
-    backgroundColor:`${rating >= 8.5 ? "lightgreen" : rating >= 5 ? "lightyellow" : "lightcoral"}`,
-    borderRadius: "5px",
+    backgroundColor:`${rating >= 8.5 ? "lightgreen" : rating >= 5 ? "yellow" : "lightcoral"}`,
+    borderRadius: "50%",
     padding: "5px 10px",
   };
   const botton = {
