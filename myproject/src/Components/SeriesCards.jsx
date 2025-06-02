@@ -26,17 +26,6 @@ export const SeriesCard = ({ data }) => {
     borderRadius: "50%",
     padding: "5px 10px",
   };
-  // const botton = {
-  //   backgroundColor: rating >= 8 ? "green" : "yellow",
-  //   color:"white",
-  //   fontWeight: "bold",
-    
-  // }
-  // const actions = {
-  //   color: 'blue',
-  //   fontWeight: "bold",
-  //   margin: "10px 0",
-  // }
 
   return (
     <li className={style.MainCard}>
