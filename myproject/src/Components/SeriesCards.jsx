@@ -1,8 +1,22 @@
-// import "../Components/Netflix.css";
 import style from '../Components/Netflix.module.css';
+import styled from 'styled-components';
 export const SeriesCard = ({ data }) => {
+
   // destructing the data object to extract properties
   const { img_url, name, rating, description, genre, cast, watch_url } = data;
+
+  const Button = styled.button`
+    background-color: ${rating >= 8 ? "green" : "goldenrod"};
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: ${rating >= 8 ? "darkgreen" : "orange"};
+    }
+    `
 
   // Inline styles for the rating
   const ratings = {
@@ -12,12 +26,12 @@ export const SeriesCard = ({ data }) => {
     borderRadius: "50%",
     padding: "5px 10px",
   };
-  const botton = {
-    backgroundColor: rating >= 8 ? "green" : "yellow",
-    color:"white",
-    fontWeight: "bold",
+  // const botton = {
+  //   backgroundColor: rating >= 8 ? "green" : "yellow",
+  //   color:"white",
+  //   fontWeight: "bold",
     
-  }
+  // }
   // const actions = {
   //   color: 'blue',
   //   fontWeight: "bold",
@@ -42,7 +56,7 @@ export const SeriesCard = ({ data }) => {
         <p>Genre: {genre.join(", ")}</p>
         <p>Cast: {cast.join(", ")}</p>
         <a href={watch_url} target="_blank">
-          <button className={style.card_btn} style={botton}>Watch Now</button>
+          <Button>Watch Now</Button>
         </a>
       </div>
     </li>
