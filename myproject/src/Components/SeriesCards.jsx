@@ -49,7 +49,7 @@ export const SeriesCard = ({ data }) => {
         <h1>Name: {name}</h1>
         <h3>Rating: <Span style={ratings}>{rating}</Span></h3>
         <p>Summary: {description}</p>
-        <p>Genre: {genre.join(", ")}</p>
+        <p className='text-3xl font-bold underline text-red-500'>Genre: {genre.join(", ")}</p>
         <p>Cast: {cast.join(", ")}</p>
         <a href={watch_url} target="_blank">
           <Button>Watch Now</Button>

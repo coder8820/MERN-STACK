@@ -1,3 +1,4 @@
+
 import seriesData from "../api/seriesData.json";
 import { SeriesCard } from "./SeriesCards";
 // import "../Components/Netflix.css";
