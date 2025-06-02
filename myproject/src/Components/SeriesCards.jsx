@@ -1,4 +1,5 @@
-import "../Components/Netflix.css";
+// import "../Components/Netflix.css";
+import style from '../Components/Netflix.module.css';
 export const SeriesCard = ({ data }) => {
   // destructing the data object to extract properties
   const { img_url, name, rating, description, genre, cast, watch_url } = data;
@@ -24,24 +25,24 @@ export const SeriesCard = ({ data }) => {
   // }
 
   return (
-    <li className="MainCard">
+    <li className={style.MainCard}>
       <div>
         <img
-          className="images"
+          className={style.images}
           src={img_url}
           alt="Logo"
           width="40%"
           height="40%"
         />
       </div>
-      <div className="content">
+      <div className={style.content}>
         <h1>Name: {name}</h1>
         <h3>Rating: <span style={ratings}>{rating}</span></h3>
         <p>Summary: {description}</p>
         <p>Genre: {genre.join(", ")}</p>
         <p>Cast: {cast.join(", ")}</p>
         <a href={watch_url} target="_blank">
-          <button className="card-btn" style={botton}>Watch Now</button>
+          <button className={style.card_btn} style={botton}>Watch Now</button>
         </a>
       </div>
     </li>
