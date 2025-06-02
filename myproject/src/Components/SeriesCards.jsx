@@ -17,6 +17,13 @@ export const SeriesCard = ({ data }) => {
       background-color: ${rating >= 8 ? "darkgreen" : "orange"};
     }
     `
+  const Span = styled.span`
+    color: ${rating >= 8 ? "green" : "goldenrod"};
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 5px;
+
+  `
 
   // Inline styles for the rating
   const ratings = {
@@ -40,7 +47,7 @@ export const SeriesCard = ({ data }) => {
       </div>
       <div className={style.content}>
         <h1>Name: {name}</h1>
-        <h3>Rating: <span style={ratings}>{rating}</span></h3>
+        <h3>Rating: <Span style={ratings}>{rating}</Span></h3>
         <p>Summary: {description}</p>
         <p>Genre: {genre.join(", ")}</p>
         <p>Cast: {cast.join(", ")}</p>
