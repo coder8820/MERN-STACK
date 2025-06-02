@@ -58,10 +58,10 @@ p,li,a,label{
   display: grid;
   gap: 4.6rem;
 }
-.grid-two-cols{
+.grid_two_cols{
   grid-template-columns: repeat(2, 1fr);
 }
-.grid-three-cols{
+.grid_three_cols{
   grid-template-columns: repeat(3, 1fr);
 }
 
