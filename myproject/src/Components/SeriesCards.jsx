@@ -11,7 +11,6 @@ export const SeriesCard = ({ data }) => {
     font-weight: bold;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     &:hover {
       background-color: ${rating >= 8 ? "darkgreen" : "orange"};
@@ -52,7 +51,7 @@ export const SeriesCard = ({ data }) => {
         <p className='text-3xl font-bold underline text-red-500'>Genre: {genre.join(", ")}</p>
         <p>Cast: {cast.join(", ")}</p>
         <a href={watch_url} target="_blank">
-          <Button>Watch Now</Button>
+          <Button className='rounded-xl shadow-md/30'>Watch Now</Button>
         </a>
       </div>
     </li>

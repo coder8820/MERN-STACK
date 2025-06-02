@@ -4,8 +4,10 @@ import { NetflixSeries } from "./Components/NetflixSeries";
 export const App = () => {
   return (
     <>
-      <h1 className="logo">Netflix Series</h1>
-      <NetflixSeries />
+      <div className="relative">
+        <h1 className="logo fixed top-0 left-0 right-0">Netflix Series</h1>
+        <NetflixSeries />
+      </div>
     </>
   );
 };
