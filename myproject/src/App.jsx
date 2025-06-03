@@ -1,16 +1,11 @@
-import "./index.css";
-// import { EventProps } from "./Components/EventProps";
-import { EventPropagation } from "./Components/EventPropagation";
+import './Components/EV.css'
+import { State } from "./Components/Hooks/State";
 
 export const App = () => {
   return (
     <>
-      <div className="relative">
-        {/* <EventHandling/> */}
-        {/* <h1 className="logo fixed top-0 left-0 right-0">Netflix Series</h1> */}
-        {/* <NetflixSeries /> */}
-        {/* <EventProps/> */}
-        <EventPropagation/>
+      <div>
+        <State/>
       </div>
     </>
   );
