@@ -8,13 +8,12 @@ export const EventHandling = () => {
         console.log(e.target.className);
         alert("Button clicked!");
     }
-    const handleWelcome = (e) =>{
+    const handleWelcome = (name,hack) =>{
         alert("Welcome to the Event Handling Example!");
-        console.log(`${name} says hello!`);
-        console.log(e);
+        console.log(`${name} says hello! to ${hack}`);
         
     }
-    const name = "Coder";
+    // const name = "Coder";
     return (
         <>
          {/* function component with named function  */}
@@ -22,7 +21,7 @@ export const EventHandling = () => {
             {/* function component with arrow function  */}
           <button onClick={(e)=> handleButton(e)}>Click me 2</button>
           <button onClick={(event)=> console.log(event)}>Inline function</button>
-          <button onClick={(event)=> handleWelcome(event)}>Inline function</button>
+          <button onClick={()=> handleWelcome('Coder',"Hacker")}>welcome</button>
 
         </>
     )

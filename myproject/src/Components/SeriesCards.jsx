@@ -1,5 +1,6 @@
 import style from '../Components/Netflix.module.css';
 import styled from 'styled-components';
+
 export const SeriesCard = ({ data }) => {
 
   // destructing the data object to extract properties
