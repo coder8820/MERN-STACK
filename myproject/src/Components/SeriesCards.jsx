@@ -5,6 +5,8 @@ export const SeriesCard = ({ data }) => {
   // destructing the data object to extract properties
   const { img_url, name, rating, description, genre, cast, watch_url } = data;
 
+  // used Styled Components to style the button 
+  // The button color changes based on the rating value
   const Button = styled.button`
     background-color: ${rating >= 8 ? "green" : "goldenrod"};
     color: white;
