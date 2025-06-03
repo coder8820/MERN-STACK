@@ -11,6 +11,7 @@ export const EventHandling = () => {
     const handleWelcome = (e) =>{
         alert("Welcome to the Event Handling Example!");
         console.log(`${name} says hello!`);
+        console.log(e);
         
     }
     const name = "Coder";
