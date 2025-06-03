@@ -2,18 +2,18 @@ import './EV.css'
 
 export const EventPropagation = () => {
 
-    const handleGrandParent = () => {
-        // e.stopPropagation(); // Prevents the event from bubbling up to the parent
+    const handleGrandParent = (e) => {
+        e.stopPropagation(); // Prevents the event from bubbling up to the parent
         console.log("Grandparent clicked");
     }
 
-    const handleParentClick = () => {
-        // e.stopPropagation(); // Prevents the event from bubbling up to the grandparent
+    const handleParentClick = (e) => {
+        e.stopPropagation(); // Prevents the event from bubbling up to the grandparent
         console.log("Parent clicked");
     }
 
-    const handleChildClick = () => {
-        // e.stopPropagation(); // Prevents the event from bubbling up to the parent and grandparent
+    const handleChildClick = (e) => {
+        e.stopPropagation(); // Prevents the event from bubbling up to the parent and grandparent
         console.log("Child clicked");
     }
 
