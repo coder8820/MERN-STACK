@@ -1,5 +1,6 @@
 import "./index.css";
-import { EventProps } from "./Components/EventProps";
+// import { EventProps } from "./Components/EventProps";
+import { EventPropagation } from "./Components/EventPropagation";
 
 export const App = () => {
   return (
@@ -8,7 +9,8 @@ export const App = () => {
         {/* <EventHandling/> */}
         {/* <h1 className="logo fixed top-0 left-0 right-0">Netflix Series</h1> */}
         {/* <NetflixSeries /> */}
-        <EventProps/>
+        {/* <EventProps/> */}
+        <EventPropagation/>
       </div>
     </>
   );
