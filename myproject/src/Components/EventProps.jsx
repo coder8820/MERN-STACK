@@ -23,6 +23,7 @@ export const EventProps = () =>{
 export const WelcomeUser = (props)=>{
     const handleGreeting = () =>{
         console.log("Hellow, Welcome to our Website!");
+        props.onClick();
     }
     return(
         <>
