@@ -1,11 +1,11 @@
-import './Components/EV.css'
-import { LiftingState } from './Components/LiftingStateUp';
+// import './Components/EV.css'
+import { ToggleSwitch } from './Components/Projects/ToggleSwitch/ToggleSwitch';
 
 export const App = () => {
   return (
     <>
-      <div className='container'>
-        <LiftingState/>
+      <div>
+        <ToggleSwitch/>
       </div>
     </>
   );

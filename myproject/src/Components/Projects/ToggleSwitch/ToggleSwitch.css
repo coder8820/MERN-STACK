@@ -5,21 +5,21 @@ body{
     justify-content: center;
 }
 .toggle-switch {
-    width: 100px;
-    height: 50px;
-    border-radius: 25px;
+    width: 200px;
+    height: 80px;
+    border-radius: 30px;
     background-color: #ccc;
     position: relative;
     cursor: pointer;
     padding: 5px;
     margin-top: 5rem;
-    box-shadow: rgba(17,12,46,0.15) 0px 48px 100px 0px, rgba(17,12,46,0.15) 0px 16px 38px 0px, rgba(17,12,46,0.15) 0px 6px 20px -8px;
+    box-shadow: rgba(17,12,46,0.15) 0px 48px 100px 0px,
 }
 
 .switch{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    width: 80px;
+    height: 70px;
+    border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,20 +29,29 @@ body{
     top: 5px;
     left: 5px;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    border: 0.3rem solid #ccc;
-    box-shadow: rgba(17,12,46,0.15) 0px 48px 100px 0px, rgba(17,12,46,0.15) 0px 16px 38px 0px, rgba(17,12,46,0.15) 0px 6px 20px -8px;
+    border: 0.3rem solid #e4dfdf;
+    box-shadow: rgba(17,12,46,0.15) 0px 48px 100px 0px, 
 }
 
 .on{
     background-color: #4caf50;
-    transform: translateX(0);
+    transform: translateX(100px);
 }
 .off{
     background-color: #f44336;
-    transform: translateX(50px);
+    transform: translateX(0px);
 }
 
 .switch-state{
     margin: 0 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #5a5454;
     text-transform: uppercase;
+}
+
+span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
 }
