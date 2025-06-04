@@ -8,6 +8,7 @@ export const DerivedState = () => {
     { id: 2, name: "Shahid Hussain", age: 25 },
     { id: 3, name: "Basit Ali", age: 28 },
     { id: 4, name: "Saleem ", age: 35 },
+    { id: 4, name: "Zeeshan Haider ", age: 35 },
   ]);
 
 
@@ -16,7 +17,7 @@ export const DerivedState = () => {
   const averageAge = users.reduce((acc, user) => acc + user.age, 0) / userCount || 0;
 
   return (
-    <div className="container">
+    <div>
       <div className="main-div">
         <h1>Derived State Example</h1>
         <ul>
