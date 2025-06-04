@@ -79,3 +79,14 @@
     list-style-type: none;
     margin: 0.5rem 0;
   }
+
+
+  .input-field{
+    width: 30rem;
+    height: 4rem;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    margin-right: 1.2rem;
+  }
