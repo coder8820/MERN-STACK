@@ -1,13 +1,13 @@
-/* eslint-disable no-unused-vars */
 import { FaCheck } from "react-icons/fa6";
 import { MdDeleteForever } from "react-icons/md";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Todo.css";
 
 export const Todo = () => {
     const [inputValue, setInputValue] = useState("");
     const [task, setTask] = useState([])
+    const [dateTime, setDatetime] = useState("")
 
     const handleInputChange =(value)=>{
         setInputValue(value);
@@ -28,10 +28,36 @@ export const Todo = () => {
         setInputValue("");
     }
 
+    // Date and time 
+    // console.log("datetime")
+
+    useEffect(() => {
+      const interval = setInterval(() =>{
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString('en-Us',{
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+        const formattedTime = currentDate.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        });
+        setDatetime(`${formattedDate} - ${formattedTime}`);
+      },1000);
+     return () => clearInterval(interval);  
+
+    },[])
+    
+    
   return (
     <section className="todo-container">
       <header>
         <h1>Todo Applicaiton</h1>
+        <h2 className="date-time">{dateTime}</h2>
       </header>
       <section className="form">
         <form onSubmit={(e) => handleFormSubmit(e)}>
