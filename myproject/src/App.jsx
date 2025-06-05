@@ -1,11 +1,10 @@
-// import './Components/EV.css'
-import { ToggleSwitch } from './Components/Projects/ToggleSwitch/ToggleSwitch';
+import { Todo } from './Components/Projects/Todo/Todo';
 
 export const App = () => {
   return (
     <>
       <div>
-        <ToggleSwitch/>
+        <Todo/>
       </div>
     </>
   );
