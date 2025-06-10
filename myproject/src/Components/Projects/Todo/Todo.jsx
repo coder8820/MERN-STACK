@@ -51,6 +51,18 @@ export const Todo = () => {
      return () => clearInterval(interval);  
 
     },[])
+
+    // delete todo functionality
+    const handleDeleteTodo = (e) =>{
+        const itemToDelete = e.target.parentElement.firstChild.textContent;
+        setTask((prev) =>{
+            return prev.filter((item) => {
+                return item !== itemToDelete;
+            })
+        })
+        
+        
+    }
     
     
   return (
@@ -81,8 +93,8 @@ export const Todo = () => {
                     task.map((item, index)=>(
                         <li key={index} className="todo-item">
                             <span>{item}</span>
-                            <button className="check-btn"><FaCheck/></button>
-                            <button className="delete-btn"><MdDeleteForever/></button>
+                            <button className="check-btn" ><FaCheck/></button>
+                            <button className="delete-btn"onClick={handleDeleteTodo}><MdDeleteForever/></button>
                         </li>
                     ))
                 }
