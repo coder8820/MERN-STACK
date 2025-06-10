@@ -56,7 +56,7 @@ export const Todo = () => {
   return (
     <section className="todo-container">
       <header>
-        <h1>Todo Applicaiton</h1>
+        <h1>My Todo Applicaiton</h1>
         <h2 className="date-time">{dateTime}</h2>
       </header>
       <section className="form">
