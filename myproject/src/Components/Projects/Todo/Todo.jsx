@@ -18,7 +18,7 @@ export const Todo = () => {
         if(!inputValue) return;
         if(task.includes(inputValue))
         {
-            alert("Task already exists");
+            alert("This Task already exists");
             setInputValue("");
             return;
         }
