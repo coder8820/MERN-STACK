@@ -54,13 +54,10 @@ export const Todo = () => {
 
     // delete todo functionality
     const handleDeleteTodo = (e) =>{
-        const itemToDelete = e.target.parentElement.firstChild.textContent;
-        setTask((prev) =>{
-            return prev.filter((item) => {
-                return item !== itemToDelete;
-            })
-        })
-        
+      const updatedTask = task.filter((data) => data !== e);
+      setTask(updatedTask);
+      console.log(updatedTask);
+      
         
     }
     
@@ -94,7 +91,10 @@ export const Todo = () => {
                         <li key={index} className="todo-item">
                             <span>{item}</span>
                             <button className="check-btn" ><FaCheck/></button>
-                            <button className="delete-btn"onClick={handleDeleteTodo}><MdDeleteForever/></button>
+                            <button className="delete-btn"
+                            onClick={() => handleDeleteTodo(item)}>
+                            <MdDeleteForever/>
+                            </button>
                         </li>
                     ))
                 }
