@@ -23,7 +23,7 @@ export const Todo = () => {
 
   // delete todo functionality
   const handleDeleteTodo = (e) => {
-    const updatedTask = task.filter((data) => data !== e);
+    const updatedTask = task.filter((data) => data.content !== e);
     setTask(updatedTask);
   };
   // handle check todo functionality

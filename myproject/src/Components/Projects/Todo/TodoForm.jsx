@@ -4,13 +4,13 @@ export const TodoForm = ({onAddTodo}) => {
   const [inputValue, setInputValue] = useState({});
 
   const handleInputChange = (value) => {
-    setInputValue({id:value, content:value, isChacked: false});
+    setInputValue({id:value, content:value, chacked: false});
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     onAddTodo(inputValue);
-    setInputValue("");
+    setInputValue({id:'', content:'', chacked: false});
   }
 
   return (
