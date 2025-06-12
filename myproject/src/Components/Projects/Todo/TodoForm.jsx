@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export const TodoForm = ({onAddTodo}) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState({});
 
   const handleInputChange = (value) => {
-    setInputValue(value);
+    setInputValue({id:value, content:value, isChacked: false});
   };
 
   const handleFormSubmit = (e) => {
@@ -21,7 +21,8 @@ export const TodoForm = ({onAddTodo}) => {
             type="text"
             className="todo-input"
             autoComplete="off"
-            value={inputValue}
+            checked={false}
+            value={inputValue.content}
             onChange={(e) => handleInputChange(e.target.value)}
           />
         </div>

@@ -8,13 +8,15 @@ export const Todo = () => {
   const [task, setTask] = useState([]);
 
   const handleFormSubmit = (inputValue) => {
-    if (!inputValue) return;
-    if (task.includes(inputValue)) {
-      alert("This Task already exists");
+    const {id, content, isChacked} = inputValue;
+    if (!content) return;
+    const ifTodoExists = task.find((data) => data.content === content);
+    if (ifTodoExists) {
+      alert("This todo already exists");
       return;
     }
     setTask((prev) => {
-      return [...prev, inputValue];
+      return [...prev, {id, content, isChacked}];
     });
   };
 
@@ -22,6 +24,16 @@ export const Todo = () => {
   // delete todo functionality
   const handleDeleteTodo = (e) => {
     const updatedTask = task.filter((data) => data !== e);
+    setTask(updatedTask);
+  };
+  // handle check todo functionality
+  const handleCheckTodo = (e) => {
+    const updatedTask = task.map((data) => {
+      if (data === e) {
+        return { ...data, isChecked: !data.isChecked };
+      }
+      return data;
+    });
     setTask(updatedTask);
   };
 
@@ -34,8 +46,13 @@ export const Todo = () => {
      <TodoForm onAddTodo={handleFormSubmit} />
       <section className="myUnOrdList">
         <ul>
-          {task.map((item, index) => (
-            <TodoList key={index} data={item} handleDeleteTodo={handleDeleteTodo}/>
+          {task.map((item) => (
+            <TodoList
+             key={item.id}
+             data={item.content}
+             handleDeleteTodo={handleDeleteTodo}
+             onhandleCheckTodo={handleCheckTodo}
+             />
           ))}
         </ul>
       </section>
