@@ -3,29 +3,24 @@ import { MdDeleteForever } from "react-icons/md";
 
 import { useEffect, useState } from "react";
 import "./Todo.css";
+import { TodoForm } from "./TodoForm";
 
 export const Todo = () => {
-  const [inputValue, setInputValue] = useState("");
   const [task, setTask] = useState([]);
   const [dateTime, setDatetime] = useState("");
 
-  const handleInputChange = (value) => {
-    setInputValue(value);
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleFormSubmit = (inputValue) => {
     if (!inputValue) return;
     if (task.includes(inputValue)) {
       alert("This Task already exists");
-      setInputValue("");
       return;
     }
     setTask((prev) => {
       return [...prev, inputValue];
     });
-    setInputValue("");
   };
+
+
 
   // Date and time
   // console.log("datetime")
@@ -54,7 +49,6 @@ export const Todo = () => {
   const handleDeleteTodo = (e) => {
     const updatedTask = task.filter((data) => data !== e);
     setTask(updatedTask);
-    // console.log(updatedTask);
   };
 
   return (
@@ -63,24 +57,7 @@ export const Todo = () => {
         <h1>My Todo Applicaiton</h1>
         <h2 className="date-time">{dateTime}</h2>
       </header>
-      <section className="form">
-        <form onSubmit={(e) => handleFormSubmit(e)}>
-          <div>
-            <input
-              type="text"
-              className="todo-input"
-              autoComplete="off"
-              value={inputValue}
-              onChange={(e) => handleInputChange(e.target.value)}
-            />
-          </div>
-          <div>
-            <button type="submit" className="todo-btn">
-              Add task
-            </button>
-          </div>
-        </form>
-      </section>
+     <TodoForm onAddTodo={handleFormSubmit} />
       <section className="myUnOrdList">
         <ul>
           {task.map((item, index) => (
