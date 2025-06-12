@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./Todo.css";
 import { TodoForm } from "./TodoForm";
 import { TodoList } from "./TodoList";
+import { DateTime } from "./DateTime";
 
 export const Todo = () => {
   const [task, setTask] = useState([]);
-  const [dateTime, setDatetime] = useState("");
 
   const handleFormSubmit = (inputValue) => {
     if (!inputValue) return;
@@ -19,26 +19,6 @@ export const Todo = () => {
   };
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const currentDate = new Date();
-      const formattedDate = currentDate.toLocaleDateString("en-Us", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-      const formattedTime = currentDate.toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true,
-      });
-      setDatetime(`${formattedDate} - ${formattedTime}`);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   // delete todo functionality
   const handleDeleteTodo = (e) => {
     const updatedTask = task.filter((data) => data !== e);
@@ -49,7 +29,7 @@ export const Todo = () => {
     <section className="todo-container">
       <header>
         <h1>My Todo Applicaiton</h1>
-        <h2 className="date-time">{dateTime}</h2>
+        <DateTime />
       </header>
      <TodoForm onAddTodo={handleFormSubmit} />
       <section className="myUnOrdList">
