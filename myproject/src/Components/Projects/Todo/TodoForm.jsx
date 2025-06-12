@@ -21,7 +21,6 @@ export const TodoForm = ({onAddTodo}) => {
             type="text"
             className="todo-input"
             autoComplete="off"
-            checked={false}
             value={inputValue.content}
             onChange={(e) => handleInputChange(e.target.value)}
           />

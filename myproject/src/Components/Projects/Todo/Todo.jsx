@@ -27,10 +27,10 @@ export const Todo = () => {
     setTask(updatedTask);
   };
   // handle check todo functionality
-  const handleCheckTodo = (e) => {
+  const handleCheckTodo = (contents) => {
     const updatedTask = task.map((data) => {
-      if (data === e) {
-        return { ...data, isChecked: !data.isChecked };
+      if (data.content === contents) {
+        return { ...data, chacked: !data.chacked };
       }
       return data;
     });
@@ -50,6 +50,7 @@ export const Todo = () => {
             <TodoList
              key={item.id}
              data={item.content}
+             chacked={item.chacked}
              handleDeleteTodo={handleDeleteTodo}
              onhandleCheckTodo={handleCheckTodo}
              />
