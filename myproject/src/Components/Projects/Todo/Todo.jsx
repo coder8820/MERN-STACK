@@ -1,9 +1,7 @@
-import { FaCheck } from "react-icons/fa6";
-import { MdDeleteForever } from "react-icons/md";
-
 import { useEffect, useState } from "react";
 import "./Todo.css";
 import { TodoForm } from "./TodoForm";
+import { TodoList } from "./TodoList";
 
 export const Todo = () => {
   const [task, setTask] = useState([]);
@@ -20,10 +18,6 @@ export const Todo = () => {
     });
   };
 
-
-
-  // Date and time
-  // console.log("datetime")
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,18 +55,7 @@ export const Todo = () => {
       <section className="myUnOrdList">
         <ul>
           {task.map((item, index) => (
-            <li key={index} className="todo-item">
-              <span>{item}</span>
-              <button className="check-btn">
-                <FaCheck />
-              </button>
-              <button
-                className="delete-btn"
-                onClick={() => handleDeleteTodo(item)}
-              >
-                <MdDeleteForever />
-              </button>
-            </li>
+            <TodoList key={index} data={item} handleDeleteTodo={handleDeleteTodo}/>
           ))}
         </ul>
       </section>
