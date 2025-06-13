@@ -1,9 +1,9 @@
-/* section {
+ /* section {
   width: 100%;
   margin-top: 10rem;
   display: flex;
   justify-content: center;
-} */
+} 
 
 .todo-container {
     align-items: center;
@@ -12,7 +12,6 @@
     min-height: 100vh;
     padding-top: 3%;
     background-image: linear-gradient(100deg, #001214, #001f29);
-    /* color: white; */
     transition: 0.3s linear;
     overflow: hidden;
   }
@@ -62,7 +61,6 @@
     letter-spacing: 0.1rem;
     border: none;
     outline: none;
-    /* border-radius: 15; */
     border-top-left-radius: 17px;
     border-bottom-left-radius: 17px;
     max-width: 500px;
@@ -120,15 +118,11 @@
   .todo-list {
     min-width: 25%;
   
-    /* To remove the bullets of unordered list */
     list-style: none;
   }
   
   .todo-item {
     margin: 2.4rem;
-    /*word-wrap: break-word;
-      */ /*flex-wrap: wrap;
-      */
     font-size: 20px;
     color: #1c2833;
     border-radius: 30px;
@@ -141,8 +135,6 @@
     grid-template-columns: 1fr 0.3fr 0.3fr;
     justify-content: start;
     gap: 1.6rem;
-    /*align-items: center;
-      */ /*wrapsthelinks*/
     overflow-wrap: anywhere;
   }
   
@@ -195,4 +187,4 @@
   
   .clear-btn:hover {
     background-color: #8d1407;
-  }
+  } */ 
