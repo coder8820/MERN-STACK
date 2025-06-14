@@ -4,17 +4,17 @@ import { useState } from "react";
 export const UseStateChallenge = () => {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(0)
-  const increment = () => {
-    setCount(count + step)
-};
+  const increment = () => setCount(count + step);
+
 
   const handleDecrement = () => {
-    if (count > 0) {
-      setCount(count - step);
-    } else {
-      alert("Count cannot be less than zero");
-    }
+   setCount(count - step)
   };
+
+  const handleReset =()=>{
+    setCount(0)
+    setStep(0)
+  }
 
   return (
     <div className="container">
@@ -23,9 +23,9 @@ export const UseStateChallenge = () => {
       <p>Count: {count}</p>
       <input type="number" value={step} onChange={(e)=>setStep(Number(e.target.value))} />
       <div className="button-container">
-        <button onClick={() => increment()}>Incremnet</button>
-        <button onClick={() => setCount(0)}>Reset</button>
-        <button onClick={() => handleDecrement()}>Decrement</button>
+        <button onClick={() => increment()} disabled={count>=100}>Incremnet</button>
+        <button onClick={() => handleReset()}>Reset</button>
+        <button onClick={() => handleDecrement()} disabled={count<=0}>Decrement</button>
       </div>
     </div>
   );
