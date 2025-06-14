@@ -1,14 +1,18 @@
 import { useState } from "react";
 import "./States.css";
+
 export const Controlled = () => {
-  const [setp, setStep] = useState("");
+  const [step, setStep] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventdefault();
-    const dataValue = document.querySelector("#inputName").value;
-    console.log(dataValue);
+    e.preventDefault();
+    console.log(step);
   };
-  console.log(setp)
+
+  const handleChange = (e) => {
+    setStep(e.target.value);
+  };
+
   return (
     <section className="container">
       <h1>Controlled Form</h1>
@@ -19,12 +23,13 @@ export const Controlled = () => {
             id="inputName"
             name="name"
             type="text"
-            value={setp}
-            onChange={(e) => setStep(e.target.value)}
+            value={step}
+            onChange={handleChange}
           />
         </label>
         <br />
         <button type="submit">Submit</button>
+        <p>{step}</p>
       </form>
     </section>
   );
