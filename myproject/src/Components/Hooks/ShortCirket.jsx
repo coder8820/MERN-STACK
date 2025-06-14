@@ -7,6 +7,7 @@ export const ShortCirketExample = () => {
 
     const hangleClear = () => {
         setUser("");
+        setIsLoggedIn(false);
     }
     
     return(
