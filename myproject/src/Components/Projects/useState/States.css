@@ -4,9 +4,10 @@
     align-items: center;
     padding: 20px;
     background-color: #b0cccb;
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
     box-sizing: border-box;
+    margin: 10rem auto;
 }
 .container p{
     font-size: 2rem;
@@ -24,4 +25,11 @@ button{
 }
 .container button:hover{
     background-color: #0056b3;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
