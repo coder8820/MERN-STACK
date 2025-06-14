@@ -2,6 +2,7 @@ import "./form.css"
 export const RegistrationForm = () => {
   return (
     <form action="#">
+        <h1>Registration Form</h1>
       <div className="container">
         <h1>SignUp</h1>
         <p>Please fill in this form to create the account!</p>

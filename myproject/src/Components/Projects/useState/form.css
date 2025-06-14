@@ -1,11 +1,58 @@
-
+form{
+    background-color: rgb(57, 57, 65);
+    height: 100vh;
+}
+form h1{
+    text-align: center;
+    color: white;
+}
 .container{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     padding: 20px;
     background-color: #1fa39f;
-    height: 100vh;
+    max-height: 100vh;
     width: 100vw;
     box-sizing: border-box;
+    margin: 0.3rem auto;
+}
+.container h1{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+input{
+    border: 1px solid white;
+    padding: 8px 8px;
+    outline: none;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+input::placeholder{
+    font-size: 16px;
+}
+label{
+    font-size: 1.4rem;
+}
+
+
+.clearfix .btn{
+    width: 20%;
+    text-align: center;
+    float: right;
+    background-color: rgb(9, 117, 24);
+    color: white;
+    padding: 8px 9px;
+    font-weight: bolder;
+    font-size: 20px; 
+    margin: 1rem 0;   
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all ease 0.3s;
+}
+.clearfix .btn:hover{
+    background-color: #04631c;
 }
