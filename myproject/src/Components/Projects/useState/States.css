@@ -33,3 +33,12 @@ button{
     gap: 20px;
     margin-top: 20px;
 }
+.container input{
+    padding: 10px;
+    font-size: 1.5rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
