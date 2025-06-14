@@ -4,7 +4,9 @@ import { useState } from "react";
 export const UseStateChallenge = () => {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(0)
-  const increment = () => setCount(count + step);
+  const increment = () => {
+    setCount(count + step)
+  };
 
 
   const handleDecrement = () => {
