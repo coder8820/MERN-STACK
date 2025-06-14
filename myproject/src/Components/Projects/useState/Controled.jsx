@@ -18,7 +18,7 @@ export const Controlled = () => {
       <h1>Controlled Form</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
+          User Name:
           <input
             id="inputName"
             name="name"
