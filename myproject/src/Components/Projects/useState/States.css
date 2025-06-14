@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #b0cccb;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+.container p{
+    font-size: 2rem;
+    color: #057e0f;
+    margin: 10px 0;
+}
+button{
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container button:hover{
+    background-color: #0056b3;
+}
