@@ -9,6 +9,9 @@
     box-sizing: border-box;
     margin: 10rem auto;
 }
+label{
+    font-size: 20px;
+}
 .container p{
     font-size: 2rem;
     color: #057e0f;
@@ -22,9 +25,11 @@ button{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 2rem auto;
+    width: 50%;
 }
 .container button:hover{
-    background-color: #0056b3;
+    background-color: #86b9f0;
 }
 
 .button-container{
@@ -41,4 +46,12 @@ button{
     width: 300px;
     box-sizing: border-box;
     background-color: #fff;
+}
+
+.form{
+    margin: 1rem auto;
+    /* background-color: #0056b3; */
+    padding: 3rem 1rem;
+    color: white;
+    width: 100%;
 }

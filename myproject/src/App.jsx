@@ -1,11 +1,11 @@
 
-import { UseStateChallenge } from './Components/Projects/useState/ChallengeState';
+import { Controlled } from './Components/Projects/useState/Controled';
 
 export const App = () => {
   return (
     <>
       <div>
-        <UseStateChallenge/>
+        <Controlled/>
       </div>
     </>
   );
