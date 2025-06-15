@@ -12,7 +12,6 @@ export const RegistrationForm = () => {
     switch (name) {
       case "firstName":
         setFirstName(vale);
-        console.log(vale);
         break;
       case "lastName":
         setLastName(vale);
