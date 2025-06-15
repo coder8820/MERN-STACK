@@ -4,29 +4,29 @@ export const RegistrationForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
 
-
-  const handleInputChange=(e)=>{
-    const {name,vale}=e.target;
-    switch(name){
-        case "firstName":
-            setFirstName(vale);
-            break;
-        case "lastName":
-            setLastName(vale);
-            break;
-        case "email":
-            setEmail(vale)
-            break;
-        case "password":
-            setPassword(vale);
-            break;
-        case "phone":
-            setPhone(vale)
+  const handleInputChange = (e) => {
+    const { name, vale } = e.target;
+    switch (name) {
+      case "firstName":
+        setFirstName(vale);
+        console.log(vale);
+        break;
+      case "lastName":
+        setLastName(vale);
+        break;
+      case "email":
+        setEmail(vale);
+        break;
+      case "password":
+        setPassword(vale);
+        break;
+      case "phone":
+        setPhone(vale);
     }
-  }
+  };
 
   return (
     <form action="#">
@@ -61,10 +61,14 @@ export const RegistrationForm = () => {
         <label htmlFor="email">
           <b>email:</b>
         </label>
-        <input type="email" name="email" placeholder="abc@gmail.com" required 
-         value={email}
-         onChange={handleInputChange}
-         />
+        <input
+          type="email"
+          name="email"
+          placeholder="abc@gmail.com"
+          required
+          value={email}
+          onChange={handleInputChange}
+        />
 
         <label htmlFor="password">
           <b>Password:</b>
@@ -81,16 +85,18 @@ export const RegistrationForm = () => {
         <label htmlFor="phone">
           <b>Phone Number</b>
         </label>
-        <input type="number" name="phone" placeholder="923947223423" required 
-        value={phone}
-        onChange={handleInputChange}
-         />
+        <input
+          type="number"
+          name="phone"
+          placeholder="923947223423"
+          required
+          value={phone}
+          onChange={handleInputChange}
+        />
 
         <p>
           By creating an account you agree to our
-          <a href="#">
-            Terms & privacy
-          </a>
+          <a href="#">Terms & privacy</a>
         </p>
 
         <div className="clearfix">
