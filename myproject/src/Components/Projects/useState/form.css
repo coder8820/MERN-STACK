@@ -63,3 +63,16 @@ label{
 .container p a{
     color: red;
 }
+
+.data{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    gap: 1rem;
+
+}
+.data span{
+    color: yellow;
+}

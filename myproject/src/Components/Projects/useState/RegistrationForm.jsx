@@ -27,9 +27,25 @@ export const RegistrationForm = () => {
     }
   };
 
+  const handleFormSubmit =()=>{
+    const formData ={
+      firstName,
+      lastName,
+      email,
+      password,
+      phone,
+    }
+    console.log(formData)
+  }
+
   return (
-    <form action="#">
-      <h1>Registration Form</h1>
+    <form onSubmit={handleFormSubmit}>
+      <section className="data">
+        <p>myFirst name: <span>{firstName}</span></p>
+        <p>Last Name: <span>{lastName}</span></p>
+        <p>Email: <span>{email}</span></p>
+        <p>Phone No: <span>{phone}</span></p>
+      </section>
       <div className="container">
         <h1>Sign-Up</h1>
         <p>Please fill in this form to create the account!</p>
