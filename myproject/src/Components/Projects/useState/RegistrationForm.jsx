@@ -41,10 +41,9 @@ export const RegistrationForm = () => {
   return (
     <form onSubmit={handleFormSubmit}>
       <section className="data">
-        <p>myFirst name: <span>{firstName}</span></p>
-        <p>Last Name: <span>{lastName}</span></p>
-        <p>Email: <span>{email}</span></p>
-        <p>Phone No: <span>{phone}</span></p>
+        <p>My name is <span>{firstName}{lastName}</span></p>
+        <p>My Email address <span>{email}</span></p>
+        <p>Phone No <span>{phone}</span></p>
       </section>
       <div className="container">
         <h1>Sign-Up</h1>
