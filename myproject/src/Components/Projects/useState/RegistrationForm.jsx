@@ -8,22 +8,22 @@ export const RegistrationForm = () => {
   const [phone, setPhone] = useState("");
 
   const handleInputChange = (e) => {
-    const { name, vale } = e.target;
+    const { name, value } = e.target;
     switch (name) {
       case "firstName":
-        setFirstName(vale);
+        setFirstName(value);
         break;
       case "lastName":
-        setLastName(vale);
+        setLastName(value);
         break;
       case "email":
-        setEmail(vale);
+        setEmail(value);
         break;
       case "password":
-        setPassword(vale);
+        setPassword(value);
         break;
       case "phone":
-        setPhone(vale);
+        setPhone(value);
     }
   };
 
