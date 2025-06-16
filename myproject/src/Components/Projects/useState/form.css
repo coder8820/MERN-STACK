@@ -13,7 +13,7 @@ form h1{
     padding: 20px;
     background-color: #1fa39f;
     max-height: 100vh;
-    width: 100vw;
+    min-width: 40vw;
     box-sizing: border-box;
     margin: 0.3rem auto;
     box-shadow: 1px 7px 14px 2px rgba(81, 105, 128, 0.79);
@@ -75,7 +75,7 @@ label{
     font-size: 2rem;
     gap: 1rem;
     padding: 2rem;
-    background-color: seagreen;
+    background-color: rgb(48, 68, 57);
 }
 .data span{
     color: yellow;
