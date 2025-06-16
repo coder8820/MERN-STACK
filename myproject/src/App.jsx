@@ -1,10 +1,10 @@
-import { RegistrationReact } from './Components/Projects/useState/RegistrationReact';
+import { LoginForm } from './Components/Projects/useState/LoginForm';
 
 export const App = () => {
   return (
     <>
       <div>
-        <RegistrationReact/>
+        <LoginForm/>
       </div>
     </>
   );
