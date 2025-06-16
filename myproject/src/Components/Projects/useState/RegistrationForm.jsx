@@ -58,7 +58,7 @@ export const RegistrationForm = () => {
         />
 
         <label htmlFor="email">
-          <b>email:</b>
+          <b>Email:</b>
         </label>
         <input
           type="email"

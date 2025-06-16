@@ -36,6 +36,7 @@ input::placeholder{
 }
 label{
     font-size: 1.4rem;
+    color: white;
 }
 .container p{
     font-size: 12px;
