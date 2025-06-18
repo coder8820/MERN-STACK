@@ -1,4 +1,4 @@
-/*-------- This styles for registration Form ------------ */
+/* -------- This styles for registration Form ------------ */
 
 /* form{
     background-color: rgb(57, 57, 65);
@@ -86,7 +86,7 @@ label{
 
 
 /* ----------- Style for Login Form ------------ */
-
+/* 
 .container{
     width: 100vw;
     height: 100vh;
@@ -140,4 +140,4 @@ input{
 .btn:hover{
     background-color: rgb(4, 75, 4);
     border-radius: 4px;
-}
+} */

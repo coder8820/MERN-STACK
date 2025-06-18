@@ -4,7 +4,7 @@ export const App = () => {
   return (
     <>
       <div>
-        <LoginForm/>
+        <RegistrationForm/>
       </div>
     </>
   );
