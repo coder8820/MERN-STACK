@@ -1,4 +1,4 @@
-import { LoginForm } from './Components/Projects/useState/LoginForm';
+import RegistrationForm from './Components/Projects/useState/RegisForm';
 
 export const App = () => {
   return (
