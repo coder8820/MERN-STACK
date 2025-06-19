@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form Preview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .form-container {
+      max-width: 500px;
+      width: 100%;
+      background-color: white;
+      border: 1px solid black;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .form-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: black;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: black;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid black;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: black;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #333;
+    }
+    
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    
+    .success-message {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .success-message h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Active Form State -->
+  <div class="form-container">
+    <h2 class="form-title">Contact Us</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name">
+        <!-- Example error would appear here -->
+        <!-- <p class="error">Name is required</p> -->
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="your@email.com">
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Your message here..."></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Success State (hidden by default) -->
+  <!--
+  <div class="form-container">
+    <div class="success-message">
+      <h2>Thank You!</h2>
+      <p>Your message has been sent successfully.</p>
+      <button class="submit-btn" style="margin-top: 20px;">Send Another Message</button>
+    </div>
+  </div>
+  -->
+</body>
+</html>
