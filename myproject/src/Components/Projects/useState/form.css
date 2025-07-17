@@ -115,7 +115,7 @@ label{
 }
 
 h1{
-    color: green;
+    color: rgb(6, 122, 26);
     text-emphasis: dot;
     text-decoration: underline;
 }
@@ -129,7 +129,9 @@ input{
 }
 
 .btn{
-    background-color: green;
+    background-color: rgb(5, 116, 5);
+    color: white;
+    border: none;
     padding: 8px 9px;
     margin: 1rem 0;
     font-size: 2rem;
@@ -141,3 +143,12 @@ input{
     background-color: rgb(4, 75, 4);
     border-radius: 4px;
 } 
+#textarea{
+    padding: 10px 11px;
+    outline: none;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    height: 100px;
+}
