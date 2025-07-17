@@ -1,10 +1,10 @@
-import RegistrationForm from './Components/Projects/useState/RegisForm';
+import { ContactForm } from './Components/Projects/useState/ContactForm';
 
 export const App = () => {
   return (
     <>
       <div>
-        <RegistrationForm/>
+        <ContactForm/>
       </div>
     </>
   );

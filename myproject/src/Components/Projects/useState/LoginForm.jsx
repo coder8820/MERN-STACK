@@ -12,6 +12,8 @@ export const LoginForm = () => {
         password
     }
     console.log(loginData)
+    setPassword("")
+    setUsername("")
   }
 
   return (
