@@ -2,23 +2,36 @@ import { useState } from "react";
 import "./form.css";
 
 export const ContactForm = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  // Using individual state variables for each input field
+  //   const [username, setUsername] = useState("");
+  //   const [email, setEmail] = useState("");
+  //   const [message, setMessage] = useState("");
+
+  // Using a single state object to manage form data
+  const [contacts, setContacts] = useState({
+    username: "",
+    email: "",
+    message: "",
+  });
 
   const handleFormSubmit = (e) => {
-    e.preventdefault();
-    if (username && email && message) {
-        alert(`Thank you ${username}, your message has been sent!`);
-        setUsername("");
-        setEmail("");
-        setMessage("");
-        }
-    else {
-        alert("Please fill in all fields.");
-    }
-    // e.target.reset();
-  }
+    e.preventDefault();
+    // const formData = {
+    //     username,
+    //     email,
+    //     message
+    // }
+    console.log("Form submitted:", contacts);
+    e.target.reset();
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setContacts((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="container">
@@ -29,18 +42,23 @@ export const ContactForm = () => {
           <input
             type="text"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            id="username"
+            placeholder="Enter your username"
+            value={contacts.username}
+            // onChange={(e) => setUsername(e.target.value)}
+            onChange={handleInputChange}
             autoComplete="off"
             required
           />
-
           <label htmlFor="email">Email</label>
           <input
             type="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            id="email"
+            placeholder="Enter your email"
+            value={contacts.email}
+            // onChange={(e) => setEmail(e.target.value)}
+            onChange={handleInputChange}
             autoComplete="off"
             required
           />
@@ -50,8 +68,9 @@ export const ContactForm = () => {
             id="message"
             data-gramm="false"
             type="password"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            value={contacts.message}
+            // onChange={(e) => setMessage(e.target.value)}
+            onChange={handleInputChange}
             placeholder="Type your message here..."
             autoComplete="off"
             required
