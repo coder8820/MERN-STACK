@@ -31,6 +31,7 @@ export const ContactForm = () => {
       ...prev,
       [name]: value,
     }));
+    setContacts("")
   };
 
   return (
@@ -38,7 +39,7 @@ export const ContactForm = () => {
       <div className="card">
         <h1>Contact Form</h1>
         <form onSubmit={handleFormSubmit}>
-          <label htmlFor="username">username</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             name="username"
