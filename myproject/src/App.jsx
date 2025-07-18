@@ -1,10 +1,10 @@
-import { ContactForm } from './Components/Projects/useState/ContactForm';
+import { ReactUseEffect } from './Components/Hooks/useEffect/Index';
 
 export const App = () => {
   return (
     <>
       <div>
-        <ContactForm/>
+        <ReactUseEffect/>
       </div>
     </>
   );
