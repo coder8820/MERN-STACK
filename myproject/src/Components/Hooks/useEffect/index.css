@@ -7,7 +7,7 @@
     color: white;
     background-color: #090b27;
 }
-h1 {
+h1,h2 {
     font-size: 2rem;
     text-align: center;
     margin-top: 20px;
