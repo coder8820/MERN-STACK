@@ -5,9 +5,9 @@ import './index.css'
 export const ReactUseEffect = () => {
     const [date, setDate] = useState(0);
     useEffect(() => {
-        const setInterval = setInterval(() => {
-            const upDatedDate = new Date();
-            setDate(upDatedDate.toLocaleTimeString);
+       setInterval(() => {
+            const updatedDate = new Date();
+            setDate(updatedDate.toLocaleTimeString());
         }, 1000);
     },[]);
     
