@@ -1,0 +1,35 @@
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c6dde6;
+}
+.effect-container {
+    text-align: center;
+}
+.card-demo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.pokemon-card{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.pokemon-card:hover {
+    transform: scale(1.05);
+}
+
+p{
+    font-size: 16px;
+    color: #333;
+}
