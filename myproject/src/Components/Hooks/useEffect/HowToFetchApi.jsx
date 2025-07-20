@@ -11,6 +11,7 @@ export const HowToFetchApi = () => {
   }, []);
   return (
     <div className="container effect-container">
+        <h1>How to fetch api Data</h1>
       <ul>
         data:
         {apiData.map((item) => {
