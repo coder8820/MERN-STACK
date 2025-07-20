@@ -44,3 +44,11 @@ input{
     border-radius: 5px;
     font-size: 14px;
 }
+
+.subscribe{
+    font-size: 3.2rem;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
