@@ -4,7 +4,7 @@ import "./Pokemon.css";
 export const HowToFetchApi = () => {
   const [apiData, setApiData] = useState(null);
 
-  const API = "https://pokeapi.co/api/v2/pokemon/pikachu"
+  const API = "https://pokeapi.co/api/v2/pokemon/squirtle"
   const fetchPokemon = async() => {
    fetch(API)
     .then((response) => response.json())
@@ -17,6 +17,15 @@ export const HowToFetchApi = () => {
   }, []);
 
   console.log(apiData);
+  if(!apiData) {
+    return (
+      <section className="container effect-container">
+        <header>
+          <h1>Loading...</h1>
+        </header>
+      </section>
+    );
+  }
   if(apiData){
   return (
     <section className="container effect-container">
