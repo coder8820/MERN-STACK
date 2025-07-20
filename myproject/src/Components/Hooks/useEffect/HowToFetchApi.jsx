@@ -6,7 +6,7 @@ export const HowToFetchApi = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const API = "https://pokeapi.co/api/v2/pokemons/squirtle";
+  const API = "https://pokeapi.co/api/v2/pokemon/squirtle";
   const fetchPokemon = async () => {
     fetch(API)
       .then((response) => response.json())
@@ -61,7 +61,18 @@ export const HowToFetchApi = () => {
                 className="pokemon-image"
               />
             </figure>
-            <p>name:{apiData.name}</p>
+            <p className="apiname">{apiData.name}</p>
+            <div className="grid-three-cols">
+              <p className="pokemon-info">
+                <span>Height:</span> {apiData.height}
+              </p>
+              <p className="pokemon-info">
+                <span>Weight:</span> {apiData.weight}
+              </p>
+              <p className="pokemon-info">
+                <span>Base Experience:</span> {apiData.base_experience}
+              </p>
+            </div>
           </li>
         </ul>
       </section>
