@@ -7,18 +7,34 @@ export const HowToFetchApi = () => {
   const [error, setError] = useState("");
 
   const API = "https://pokeapi.co/api/v2/pokemon/squirtle";
+  
+  // const fetchPokemon = () => {
+  //   fetch(API)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setApiData(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setError(error);
+  //       setLoading(false);
+  //     });
+  // };
+
   const fetchPokemon = async () => {
-    fetch(API)
-      .then((response) => response.json())
-      .then((data) => {
-        setApiData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  };
+    try {
+      const response = await fetch(API);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setApiData(data);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
     fetchPokemon();
