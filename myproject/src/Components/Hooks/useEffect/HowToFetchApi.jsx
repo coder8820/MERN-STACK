@@ -7,13 +7,13 @@ export const HowToFetchApi = () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
     .then((responce) => responce.json())
     .then((data) => setApiData(data))
-    .catch((error) => console.log("Error fetching data:", error));
+    .catch((error) => console.log("Error fetching data:", error));    
   }, []);
   return (
     <div className="container effect-container">
         <h1>How to fetch api Data</h1>
       <ul>
-        data:
+        Data:
         {apiData.map((item) => {
           return <li key={item.id}>{item.title}</li>;
         })}
