@@ -3,13 +3,14 @@ import "./Pokemon.css";
 
 export const HowToFetchApi = () => {
   const [apiData, setApiData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const API = "https://pokeapi.co/api/v2/pokemon/squirtle"
   const fetchPokemon = async() => {
    fetch(API)
     .then((response) => response.json())
-    .then((data) => { setApiData(data); })
-    .catch((error) => console.error("Error fetching data:", error));
+    .then((data) => { setApiData(data); setLoading(false); })
+    .catch((error) => {console.error("Error fetching data:", error); setLoading(false); });
   }
 
   useEffect(() => {
@@ -17,7 +18,8 @@ export const HowToFetchApi = () => {
   }, []);
 
   console.log(apiData);
-  if(!apiData) {
+  if(loading) {
+    // Show a loading state while fetching data
     return (
       <section className="container effect-container">
         <header>
