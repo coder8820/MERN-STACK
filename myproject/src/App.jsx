@@ -1,10 +1,10 @@
-import { ReactUseEffect } from './Components/Hooks/useEffect/Index';
+import { UseEffectChallenge } from './Components/Hooks/useEffect/useEffectChallenge';
 
 export const App = () => {
   return (
     <>
       <div>
-        <ReactUseEffect/>
+        <UseEffectChallenge/>
       </div>
     </>
   );
