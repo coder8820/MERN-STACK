@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Pokemon.css";
 
-export const HowNotFetchApi = () => {
+export const HowToFetchApi = () => {
   const [apiData, setApiData] = useState([]);
-  fetch("https://jsonplaceholder.typicode.com/posts")
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
     .then((responce) => responce.json())
     .then((data) => setApiData(data))
     .catch((error) => console.log("Error fetching data:", error));
+  }, []);
   return (
     <div className="container effect-container">
       <ul>

@@ -1,10 +1,10 @@
-import { CleanUp } from './Components/Hooks/useEffect/CleanUp';
+import { HowToFetchApi } from "./Components/Hooks/useEffect/HowToFetchApi";
 
 export const App = () => {
   return (
     <>
       <div>
-        <CleanUp/>
+        <HowToFetchApi />
       </div>
     </>
   );
