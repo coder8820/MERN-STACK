@@ -1,10 +1,15 @@
-export const PokemonCard = ({pokemon})=>{
-    return (
-        <li className="card">
-        <img src={pokemon.image} alt={pokemon.name} />
-        <h3>{pokemon.name}</h3>
-        <p>ID: {pokemon.id}</p>
-        <p>Types: {pokemon.types.join(', ')}</p>
-        </li>
-    );
-}
+export const PokemonCard = ({ pokemonData }) => {
+  return (
+    <li className="pokemon-card">
+      <figure>
+        <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+      </figure>
+      <figcaption>
+        <h3>{pokemonData.name}</h3>
+        <p>Height: {pokemonData.height / 10} m</p>
+        <p>Weight: {pokemonData.weight / 10} kg</p>
+        <p>Base Experience: {pokemonData.base_experience}</p>
+      </figcaption>
+    </li>
+  );
+};
