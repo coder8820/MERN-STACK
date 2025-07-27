@@ -3,7 +3,7 @@ import "./index.css";
 import { useState } from "react";
 import { PokemonCard } from "./PokemonCard";
 
-const Api = "https://pokeapi.co/api/v2/pokemon?limit=24";
+const Api = "https://pokeapi.co/api/v2/pokemon?limit=60";
 
 export const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
@@ -47,7 +47,6 @@ export const Pokemon = () => {
       <section className="container">
         <header>
           <h2>Lets Catch Pokemon</h2>
-          <h2>Here are all Pokemon Cards</h2>
         </header>
         <div>
           <ul className="cards">
