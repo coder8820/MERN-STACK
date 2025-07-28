@@ -46,7 +46,7 @@ export const Pokemon = () => {
     <>
       <section className="container">
         <header>
-          <h2>Lets Catch Pokemon</h2>
+          <h1>Lets Catch Pokemon</h1>
         </header>
         <div>
           <ul className="cards">

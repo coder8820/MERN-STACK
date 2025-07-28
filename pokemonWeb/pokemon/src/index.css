@@ -176,7 +176,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
     margin: 1.6rem 0;
   
     & p {
@@ -198,7 +197,7 @@
     height: 15rem;
   }
   
-  pokemon-info {
+  .pokemon-info {
     text-align: center;
   }
   
