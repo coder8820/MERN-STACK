@@ -137,6 +137,7 @@
   }
   
   .pokemon-card:hover::before {
+    border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
     -webkit-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
     -moz-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
     -ms-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
