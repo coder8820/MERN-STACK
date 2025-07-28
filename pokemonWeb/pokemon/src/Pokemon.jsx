@@ -22,7 +22,6 @@ export const Pokemon = () => {
       });
       const detailedResponse = await Promise.all(detailedPokemonData);
       setPokemon(detailedResponse);
-      console.log(detailedResponse);
       setLoading(false);
     } catch (error) {
         setLoading(false);

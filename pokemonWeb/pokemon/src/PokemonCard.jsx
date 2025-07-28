@@ -12,6 +12,8 @@ export const PokemonCard = ({ pokemonData }) => {
         <p>Types: {pokemonData.types.map(type => type.type.name).join(', ')}</p>
         <p>Abilities: {pokemonData.abilities.map(ability => ability.ability.name).join(', ')}</p>
         <p>Base Experience: {pokemonData.base_experience}</p>
+        <p>Info: {pokemonData.stats.map(stat => stat.stat.name).join(',')}</p>
+        <p>Past Abilities: {pokemonData.past_abilities.map(abilities=> abilities.generation.name)}</p>
       </figcaption>
     </li>
   );
