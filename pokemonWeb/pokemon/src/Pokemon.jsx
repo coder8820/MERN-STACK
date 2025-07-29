@@ -3,7 +3,7 @@ import "./index.css";
 import { useState } from "react";
 import { PokemonCard } from "./PokemonCard";
 
-const Api = "https://pokeapi.co/api/v2/pokemon?limit=60";
+const Api = "https://pokeapi.co/api/v2/pokemons?limit=60";
 
 export const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
