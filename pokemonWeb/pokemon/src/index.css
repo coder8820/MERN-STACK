@@ -81,12 +81,13 @@
     appearance: none;
     border: none;
     outline: none;
-    width: 32rem;
+    width: 42rem;
     border-bottom: 0.2em solid #020d35;
     background: rgba(#e91e63, 0.2);
     border-radius: 0.2em 0.2em 0 0;
-    padding: 0.8em;
-    font-size: 1.6rem;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
     color: #000000;
     -webkit-border-radius: 0.2em 0.2em 0 0;
     -moz-border-radius: 0.2em 0.2em 0 0;

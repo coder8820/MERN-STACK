@@ -3,12 +3,13 @@ import "./index.css";
 import { useState } from "react";
 import { PokemonCard } from "./PokemonCard";
 
-const Api = "https://pokeapi.co/api/v2/pokemon?limit=60";
+const Api = "https://pokeapi.co/api/v2/pokemon?limit=200";
 
 export const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [search, setSearch] = useState("");
 
   const fetchPokemon = async () => {
     try {
@@ -34,6 +35,10 @@ export const Pokemon = () => {
     fetchPokemon();
   }, []);
 
+  const sarchData = pokemon.filter((curPokemon) => 
+     curPokemon.name.toLowerCase().includes(search.toLowerCase())
+);
+
   if (loading) {
     return <h2 className="loading">Loading...</h2>;
   }
@@ -48,9 +53,19 @@ export const Pokemon = () => {
         <header>
           <h1>Let's Catch Pokemon</h1>
         </header>
+        <div className="pokemon-search">
+          <input
+            type="text"
+            placeholder="Search Pokemon"
+            className="pokemon-search-input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button className="pokemon-search-button"></button>
+        </div>
         <div>
           <ul className="cards">
-            {pokemon.map((curPokemon) => {
+            {sarchData.map((curPokemon) => {
               return (
                 <PokemonCard key={curPokemon.id} pokemonData={curPokemon} />
               );
