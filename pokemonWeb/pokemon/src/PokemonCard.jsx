@@ -23,6 +23,15 @@ export const PokemonCard = ({ pokemonData }) => {
           <p className="pokemon-ingo">
             <span>speed: {pokemonData.stats[5].base_stat}</span>
           </p>
+          <p className="pokemon-info">
+            <span>Experience:{pokemonData.base_experience}</span>
+          </p>
+          <p className="pokemon-info">
+            <span>Attack:{pokemonData.stats[1].base_stat}</span>
+          </p>
+          <p className="pokemon-ingo">
+            <span>{pokemonData.abilities.map(abi => abi.ability.name).slice(0,1).join(', ')}</span>
+          </p>
         </div>
       </figcaption>
     </li>
