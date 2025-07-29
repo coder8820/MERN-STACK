@@ -2,18 +2,28 @@ export const PokemonCard = ({ pokemonData }) => {
   return (
     <li className="pokemon-card">
       <figure>
-        <img className="pokemon-image" src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+        <img
+          className="pokemon-image"
+          src={pokemonData.sprites.front_default}
+          alt={pokemonData.name}
+        />
       </figure>
       <figcaption>
         <h3 className="pokemon-name">{pokemonData.name}</h3>
-        <p>ID: {pokemonData.id}</p>
-        <p>Height: {pokemonData.height / 10} m</p>
-        <p>Weight: {pokemonData.weight / 10} kg</p>
-        <p>Types: {pokemonData.types.map(type => type.type.name).join(', ')}</p>
-        <p>Abilities: {pokemonData.abilities.map(ability => ability.ability.name).join(', ')}</p>
-        <p>Base Experience: {pokemonData.base_experience}</p>
-        <p>Info: {pokemonData.stats.map(stat => stat.stat.name).join(',')}</p>
-        <p>Past Abilities: {pokemonData.past_abilities.map(abilities=> abilities.generation.name)}</p>
+        <div className="pokemon-info pokemon-highlight">
+          <p>{pokemonData.types.map(type => type.type.name).join(", ")}</p>         
+        </div>
+        <div className="grid-three-cols">
+          <p className="pokemon-info">
+            <span>Height:{pokemonData.height}</span>
+          </p>
+          <p className="pokemon-info">
+            <span>Weight:{pokemonData.weight}</span>
+          </p>
+          <p className="pokemon-ingo">
+            <span>speed: {pokemonData.stats[5].base_stat}</span>
+          </p>
+        </div>
       </figcaption>
     </li>
   );
