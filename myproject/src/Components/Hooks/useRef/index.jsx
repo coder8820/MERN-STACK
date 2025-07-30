@@ -29,18 +29,21 @@ export const UseRef = () => {
           id="username"
           placeholder="Username"
           ref={username}
+          required
         />
         <input
           type="email"
           id="email"
           placeholder="abc@gmail.com"
           ref={email}
+          required
         />
         <input
           type="password"
           id="password"
           placeholder="password"
           ref={password}
+          required
         />
         <button>Submit</button>
       </form>
