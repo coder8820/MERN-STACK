@@ -1,10 +1,10 @@
-import { HowToFetchApi } from "./Components/Hooks/useEffect/HowToFetchApi";
+import { UseRef } from "./Components/Hooks/useRef";
 
 export const App = () => {
   return (
     <>
       <div>
-        <HowToFetchApi />
+        <UseRef />
       </div>
     </>
   );
