@@ -8,6 +8,8 @@ export const ForwardRef = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     alert("Form submitted with ForwardRef inputs");
+    username.current.value=''
+    password.current.value='';
   };
 
   return (
