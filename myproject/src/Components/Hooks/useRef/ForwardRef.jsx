@@ -6,7 +6,7 @@ export const ForwardRef = () => {
   const password = useRef(null);
 
   const handleFormSubmit = (e) => {
-    e.preventDefualt();
+    e.preventDefault();
     alert("Form submitted with ForwardRef inputs");
   };
 
@@ -31,7 +31,7 @@ const BeforeReact19Input = forwardRef((props, ref) => {
             type="text"
             id={id}
             ref={ref}
-            placeholder="Enter text"
+            placeholder="Enter your value"
             required
         />
     </div>
