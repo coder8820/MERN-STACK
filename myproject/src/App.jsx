@@ -1,10 +1,10 @@
-import { ForwardRef } from "./Components/Hooks/useRef/ForwardRef";
+import { UseIdHook } from "./Components/Hooks/useRef/UseIdHook";
 
 export const App = () => {
   return (
     <>
       <div>
-        <ForwardRef />
+        <UseIdHook />
       </div>
     </>
   );
