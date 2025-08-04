@@ -30,6 +30,7 @@ export const UseIdHook = () => {
   };
   return (
     <form onSubmit={handleSubmit} className="form">
+      <h1>UseId Hook Example</h1><br />
       <div>
         <label htmlFor={id + "usernameId"}>Username</label>
         <input type="text" id={id+"usernameId"} name="name" />
