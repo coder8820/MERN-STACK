@@ -39,6 +39,10 @@ export const UseIdHook = () => {
         <label htmlFor={id + "emailId"}>Email</label>
         <input type="email" id={id + "emailId"} name="email" />
       </div>
+      <div>
+        <label htmlFor={id + "passwordId"}>Password</label>
+        <input type="password" id={id + "passwordId"} name="password" />
+      </div>
       <button type="submit">Submit</button>
     </form>
   );
