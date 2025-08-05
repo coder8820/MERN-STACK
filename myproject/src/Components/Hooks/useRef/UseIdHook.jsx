@@ -25,8 +25,11 @@ export const UseIdHook = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form submitted");
-    
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+    alert(`Username: ${data.name}, Email: ${data.email}, Password: ${data.password}`);
+    event.target.reset(); // Reset the form after submission    
   };
   return (
     <form onSubmit={handleSubmit} className="form">
