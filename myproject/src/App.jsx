@@ -1,10 +1,10 @@
-import { UseIdHook } from "./Components/Hooks/useRef/UseIdHook";
+import { ParentComponent } from "./Components/PropDrilling";
 
 export const App = () => {
   return (
     <>
       <div>
-        <UseIdHook />
+        <ParentComponent />
       </div>
     </>
   );
