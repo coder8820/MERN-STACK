@@ -5,7 +5,7 @@ export const ParentComponent = () => {
          className={'p-4 h-lvh font-display tracking-wider flex flex-col justify-center items-center bg-gray-900 text-white'}
         >
             <h1>I am Grand Parent</h1>
-            <ChildComponent data='React Js'/>
+            <ChildComponent data='this is React js propDrilling method'/>
         </section>
     )
 }
