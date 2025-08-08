@@ -23,7 +23,7 @@ const ChildComponent = (props) => {
 const GrandChildComponent = (props) => {
     return(
         <div className={'p-4 bg-gray-700 rounded-lg text-red-500'}>
-            <h1>I am Child</h1>
+            <h1>I am Child do you know that</h1>
             <p>Prop Drilling Example</p>
             <p>Data recived from Parent: {props.data}</p>
         </div>
