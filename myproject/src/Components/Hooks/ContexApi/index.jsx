@@ -6,7 +6,10 @@ export const BioContext = createContext();
 // 2nd step 
 export const BioProvider = ({children}) => {
     const myname = "Pro Coder";
-    return <BioContext.Provider value={{myname}}>
+    const age = 25;
+    const profession = "Software Engineer";
+    console.log(children)
+    return <BioContext.Provider value={{myname,age,profession}}>
         {children}
     </BioContext.Provider>
     

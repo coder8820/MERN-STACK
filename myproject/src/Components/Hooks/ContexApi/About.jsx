@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { BioContext } from ".";
 
-export const Home = () => {
+export const About = () => {
 
     const { myname, age, profession} = useContext(BioContext);
     return(
         <>
-         <h1>Hello context api. My name is {myname}, age {age} and profession {profession}</h1>
+         <h1>This is about page Data. My name is {myname}, age {age} and profession {profession}</h1>
         </>
     )
 }
