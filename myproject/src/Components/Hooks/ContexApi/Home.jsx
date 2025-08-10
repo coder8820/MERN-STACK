@@ -3,10 +3,10 @@ import { BioContext } from ".";
 
 export const Home = () => {
 
-    const { myname, age, profession} = useContext(BioContext);
+    const { myname, age, profession,bio} = useContext(BioContext);
     return(
         <>
-         <h1>Hello context api. My name is {myname}, age {age} and profession {profession}</h1>
+         <h1>Hello context api. My name is {myname}, age {age} and profession {profession}. Bio{bio}</h1>
         </>
     )
 }
