@@ -1,6 +1,7 @@
 import { createContext } from "react";
 
 // 1st step 
+// eslint-disable-next-line react-refresh/only-export-components
 export const BioContext = createContext();
 
 // 2nd step 
