@@ -22,9 +22,6 @@ export const Home = () => {
               <a href="#" className="text-lg">Services</a>
             </li>
             <li className="flex justify-between items-center p-4 hover:bg-gray-200 transition-colors duration-300">
-              <a href="#" className="text-lg">Cources</a>
-            </li>
-            <li className="flex justify-between items-center p-4 hover:bg-gray-200 transition-colors duration-300">
               <a href="#" className="text-lg">Login</a>
             </li>
           </ul>
