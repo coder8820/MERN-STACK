@@ -11,7 +11,7 @@ export const Home = () => {
         </h1>
         <div className="bg-gray-100 text-gray-800 p-4 rounded-lg shadow-lg mt-4 h-full w-full max-w-2xl">
           <h2 className="text-2xl font-bold mb-4">Navigation</h2>
-          <ul className="flex flex-col md:flex-row justify-center items-center gap-4 bg-white rounded-lg shadow-md ">
+          <ul className="flex flex-col md:flex-row justify-center items-center bg-white gap-3s shadow-md w-80 m-auto">
             <li className="flex justify-between items-center hover:bg-gray-200 transition-colors duration-300 w-full f-lex-1 text-success max-w-2xl m-t- p-l-4 p-r-4">
               <a href="#" className="text-lg">Home</a>
             </li>
