@@ -34,17 +34,7 @@ export const Home = () => {
         <dev className="containe">
           <h1>Networking Related Courses Here!</h1>
           <p className="bg-white-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum doloribus magni corporis repellendus vel, quidem libero asperiores? Accusamus earum excepturi provident magnam facilis eaque, ad sunt aliquid perferendis asperiores quaerat enim. Quasi natus ab voluptas! Rerum voluptate reiciendis quo, suscipit porro quos eum quibusdam vero quam quasi illum velit, praesentium fugit? Maiores quae architecto expedita esse totam eligendi corrupti harum repudiandae illum qui quaerat, perspiciatis perferendis enim voluptatem, similique dicta neque consectetur necessitatibus sint voluptates rem. Animi iusto placeat quaerat laudantium earum numquam ab reiciendis minus odio facere error, recusandae, doloremque deserunt eius provident omnis natus consequatur voluptatibus ipsam aliquam.</p>
-          <section className="bg-gray-100 text-gray-800 p-4 rounded-lg shadow-lg mt-4 h-full w-full max-w-2xl">
-            <form action="#" className="flex flex-col">
-              <label htmlFor="username">Username</label>
-              <input type="text" id="name" value='name' placeholder="Username" />
-              <label htmlFor="email">Email</label>
-              <input type="text" id="email" value='email' placeholder="sas@gmail.com" />
-              <label htmlFor="password">Password</label>
-              <input type="password" value='password' placeholder="S#S#%^@FSD7s%" />
-              <button>Submit</button>
-            </form>
-          </section>
+          
         </dev>
       </section>
     </>
