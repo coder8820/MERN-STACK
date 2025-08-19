@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { use } from "react";
 import { BioContext } from ".";
 
 export const About = () => {
-  const { myname, age, profession } = useContext(BioContext);
+  const { myname, age, profession } = use(BioContext);
   return (
     <>
       <section className="p-4 h-lvh font-display tracking-wider flex flex-col items-center justify-center bg-gray-100 text-white">
