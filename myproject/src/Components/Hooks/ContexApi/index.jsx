@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, use } from "react";
 
 // 1st step
 // eslint-disable-next-line react-refresh/only-export-components
@@ -20,6 +20,6 @@ export const BioProvider = ({ children }) => {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useBioContext = () => {
-    const context = useContext(BioContext);
+    const context = use(BioContext);
     return context;
 }
