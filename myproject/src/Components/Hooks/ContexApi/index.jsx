@@ -10,7 +10,6 @@ export const BioProvider = ({ children }) => {
   const age = 25;
   const bio = "This is my bio";
   const profession = "Software Engineer";
-  console.log(children);
   return (
     <BioContext.Provider value={{ myname, age, profession, bio }}>
       {children}
