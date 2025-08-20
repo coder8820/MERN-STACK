@@ -1,0 +1,20 @@
+import { useState } from "react";
+
+export const ReactMemo = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div className="p-5 flex flex-col items-center justify-center screen h-screen bg-gray-200">
+        <h1>Count:{count}</h1>
+        <button
+          className="btn bg-cyan-500 py-1 px-3"
+          onClick={() => setCount(count + 1)}
+        >
+          Increment
+        </button>
+      </div>
+      <Counts/>
+    </>
+  );
+};
