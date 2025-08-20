@@ -18,7 +18,8 @@ export const ReducerCompo = () =>{
 
     return(
         <div className="p-5 flex flex-col items-center justify-center screen h-screen bg-gray-200">
-            <h1>Helo! UseReducer Hook.{count}</h1>
+            <h1>Helo! UseReducer Hook.</h1>
+            <h2 className="text-2xl font-bold mt-4">Count: {count}</h2>
             <button onClick={() => dispatch({type: "increment"})}>Increment</button>
             <button onClick={() => dispatch({type: "decrement"})}>Decrement</button>
         </div>
