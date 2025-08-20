@@ -1,12 +1,10 @@
 
-import { DarkMode, ThemeProvider } from "./Components/Hooks/ContexApi/DarkLight";
+import { ReducerCompo } from "./Components/Hooks/UseReducer";
 
 export const App = () => {
   return (
     <>
-      <ThemeProvider>
-        <DarkMode />
-      </ThemeProvider>
+      <ReducerCompo />
     </>
   );
 };
