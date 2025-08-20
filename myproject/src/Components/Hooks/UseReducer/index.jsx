@@ -1,5 +1,7 @@
 import { useReducer } from "react"
 
+import '../ContexApi/index.css'
+
 export const ReducerCompo = () =>{
 
     const reducer = (state, action) => {
