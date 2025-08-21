@@ -22,7 +22,8 @@ const ChildMemo = () => {
         <div className="p-4">
             <h2 className="text-lg font-semibold">Child Component Count:{count}</h2>
             <p>This component is memoized and will not re-render unless its props change.</p>
-            <button onClick={() => setCount(count + 1 )}>Decrement</button>
+            <button className="bg-green-200 px-3 py-4" onClick={() => setCount(count + 1 )}>Increment</button>
+            <button onClick={() => setCount(count + 1 )}>Increment</button>
         </div>
     )
 }
