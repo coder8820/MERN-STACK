@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { memo, useMemo, useState } from "react"
 
 
 const ExpensiveComponent = () => {
@@ -10,21 +10,22 @@ const ExpensiveComponent = () => {
         }
         return i;
     }
-    const total = sum();
+    const total = useMemo(() => sum(), []);
     return <div>Total sum: {total}</div>
 }
 
 
-export const MemoParentComponent =() =>{
+const MemoParentComponent = () =>{
 
     const [count, setCount] = useState(0)
 
     return(
         <>
-            <div className="p-4 h-lvh fond-display flex flex-col justify-center items-center tracking-wider">
+            <div className="p-4 h-lvh fond-display flex flex-col justify-center items-center tracking-wider bg-yellow-700">
+                <ExpensiveComponent />
                 <button
                 onClick={() => setCount(count + 1)}
-                className="bg-blue-400 text-white px-3 py-2 rounded-md" 
+                className="bg-blue-500 text-white px-4 py-4 rounded-md" 
                 >Re-render Parent</button>
                 <p>Parent re-render counts: {count}</p>
             </div>
@@ -32,4 +33,4 @@ export const MemoParentComponent =() =>{
     )
 }
 
-export default MemoParentComponent;
+export default memo(MemoParentComponent);
