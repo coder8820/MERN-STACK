@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Counts from "./MemoCount";
 
 export const ReactMemo = () => {
   const [count, setCount] = useState(0);
 
-  const myBigData = {
-    name: "kumail",
-    age: 24,
-    address: "Skardu",
-    profession: "Developer",
-  }
+
+  const myBigData = useMemo(() => { // memoizing an object 
+    return {
+      name: "kumail",
+      age: 24,
+      address: "Skardu",
+      profession: "Developer",
+    };
+  }, []);
 
   return (
     <>
@@ -21,7 +24,7 @@ export const ReactMemo = () => {
         >
           Increment
         </button>
-      <Counts prop={myBigData}/>
+      <Counts bioData={myBigData}/>
       </div>
     </>
   );

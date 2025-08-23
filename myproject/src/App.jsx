@@ -1,11 +1,10 @@
 
-import { ReactMemo } from "./Components/Hooks/Memo/ReactMemo";
-import MemoParentComponent from "./Components/Hooks/Memo/UseMemo";
+import { UseCallbakComponent } from "./Components/Hooks/Memo/UseCallback";
 
 export const App = () => {
   return (
     <>
-      <MemoParentComponent />
+      <UseCallbakComponent />
     </>
   );
 };

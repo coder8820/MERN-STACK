@@ -1,6 +1,6 @@
 import { memo, useRef, useState } from "react"
 
-const Counts = ({bigData}) => {
+const Counts = ({bioData}) => {
     const renderCount = useRef(0);
     console.log(renderCount)
     return(
@@ -8,7 +8,10 @@ const Counts = ({bigData}) => {
             <p>Nothing changed but i have now renderd:
                 <span className="text-red-600">{renderCount.current ++} time(s)</span>
             </p>
-            <p>my name is: {bigData.name}</p>
+            <p>my name is: {bioData.name}</p>
+            <p>My age: {bioData.age}</p>
+            <p>Address {bioData.address}</p>
+            <p>Profession: {bioData.profession}</p>
             <ChildMemo />
         </div>
     )
