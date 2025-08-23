@@ -11,8 +11,8 @@ export const UseCallbakComponent = () => {
             <h1 className="mb-4">
                 Count: {count}
             </h1>
-            <buttin onClick={increment} className="bg-blue-500 text-white px-4 py-4 rounded cursor-pointer">InCrement</buttin>
-            <buttin onClick={decrement} className="bg-blue-800 text-white px-8 py-8 rounded cursor-pointer">Decrement</buttin>
+            <button onClick={increment} className="bg-blue-500 text-white px-4 py-4 rounded cursor-pointer">InCrement</button>
+            <button onClick={decrement} className="bg-blue-800 text-white px-8 py-8 rounded cursor-pointer">Decrement</button>
         </div>
        </div>
     )
