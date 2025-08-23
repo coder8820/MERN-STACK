@@ -4,6 +4,13 @@ import Counts from "./MemoCount";
 export const ReactMemo = () => {
   const [count, setCount] = useState(0);
 
+  const myBigData = {
+    name: "kumail",
+    age: 24,
+    address: "Skardu",
+    profession: "Developer",
+  }
+
   return (
     <>
       <div className="p-5 flex flex-col items-center justify-center screen h-screen bg-gray-200">
@@ -14,7 +21,7 @@ export const ReactMemo = () => {
         >
           Increment
         </button>
-      <Counts/>
+      <Counts prop={myBigData}/>
       </div>
     </>
   );
