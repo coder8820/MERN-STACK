@@ -7,7 +7,7 @@ const Button = ({ handleClick, children }) => {
     <button
       onClick={handleClick}
       className={`text-black mb-4 py-2 px-4 rounded ${
-        children === "Increment" ? "bg-green-400" : "bg-red-400"
+        children === "Increment" ? "bg-green-900" : "bg-red-400"
       }`}
     >
       {children}
