@@ -11,6 +11,10 @@ const App =() => {
       element: <About/>,
     },
     {
+      path: "/contact",
+      element: <Contact/>,
+    },
+    {
       path: "/movies",
       element: <Movies/>,
     }
