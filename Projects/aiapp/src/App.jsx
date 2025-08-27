@@ -1,36 +1,37 @@
 import { useState } from "react";
 import "./App.css";
-import {URL} from "./const.js"
+import { URL } from "./const.js";
+import Answers from "./Components/Answers.jsx";
 // const api = "AIzaSyDTmhVVg9q-VLTOt0S7EJRlHZvjA8IVIO4";
 function App() {
   const [question, setQuestion] = useState("");
   const [result, setResult] = useState(undefined);
 
- const payload = {
-    "contents": [
+  const payload = {
+    contents: [
       {
-        "parts": [
+        parts: [
           {
-            "text": question
-          }
-        ]
-      }
-    ]
-  }
+            text: question,
+          },
+        ],
+      },
+    ],
+  };
 
   const askQuestion = async () => {
     let response = await fetch(URL, {
       method: "POST",
-      body:JSON.stringify(payload),
+      body: JSON.stringify(payload),
     });
-    const data = await response.json();
-    const answer = data.candidates[0].content.parts[0].text;
+    let data = await response.json();
+    data = data.candidates[0].content.parts[0].text;
+    let finalData = data.split('\n').map((item) => item.trim());
+    
 
-    setResult(answer);
+    setResult(finalData);
 
-    console.log("Answer received:", answer);
-    // console.log("Question asked:", question);
-  }
+  };
 
   return (
     <div className="grid grid-cols-5 h-screen">
@@ -40,7 +41,16 @@ function App() {
       <div className="main-content col-span-4 p-10">
         <h1>Main Content</h1>
         <div className="container h-120 border border-zinc-800 my-4 rounded-lg overflow-y-auto">
-          <p className="p-4 text-white mx-2 my-2">{result}</p>
+          <div className="text-white">
+            {/* {result} */}
+            {
+              result && result.map((item, index) => (
+                <div key={index} className="p-2 border-b border-zinc-800">
+                  <Answers ans={item}/>
+                </div>
+              ))
+            }
+          </div>
         </div>
         <div className="bg-zinc-800 flex m-auto w-1/2  text-white p-2 rounded-4xl border border-zinc-600 ">
           <input
@@ -50,9 +60,10 @@ function App() {
             placeholder="How can i assist you today!"
             className="w-full outline-none p-2"
           />
-          <button 
-          onClick={askQuestion}
-          className="cursor-pointer px-2 bg-zinc-600 rounded-4xl">
+          <button
+            onClick={askQuestion}
+            className="cursor-pointer px-2 bg-zinc-600 rounded-4xl"
+          >
             Ask
           </button>
         </div>
