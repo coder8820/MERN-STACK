@@ -4,13 +4,14 @@ import {URL} from "./const.js"
 // const api = "AIzaSyDTmhVVg9q-VLTOt0S7EJRlHZvjA8IVIO4";
 function App() {
   const [question, setQuestion] = useState("");
+  const [result, setResult] = useState(undefined);
 
  const payload = {
     "contents": [
       {
         "parts": [
           {
-            "text": "Explain how AI works in a few words"
+            "text": question
           }
         ]
       }
@@ -18,15 +19,17 @@ function App() {
   }
 
   const askQuestion = async () => {
-    const response = await fetch(URL, {
+    let response = await fetch(URL, {
       method: "POST",
       body:JSON.stringify(payload),
     });
-
     const data = await response.json();
-    const answer = data.answer;
+    const answer = data.candidates[0].content.parts[0].text;
+
+    setResult(answer);
+
     console.log("Answer received:", answer);
-    console.log("Question asked:", question);
+    // console.log("Question asked:", question);
   }
 
   return (
@@ -36,7 +39,9 @@ function App() {
       </div>
       <div className="main-content col-span-4 p-10">
         <h1>Main Content</h1>
-        <div className="container h-120 border border-zinc-800 my-4 rounded-lg overflow-y-auto"></div>
+        <div className="container h-120 border border-zinc-800 my-4 rounded-lg overflow-y-auto">
+          <p className="p-4 text-white mx-2 my-2">{result}</p>
+        </div>
         <div className="bg-zinc-800 flex m-auto w-1/2  text-white p-2 rounded-4xl border border-zinc-600 ">
           <input
             type="text"
