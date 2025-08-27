@@ -26,10 +26,11 @@ function App() {
     });
     let data = await response.json();
     data = data.candidates[0].content.parts[0].text;
-    let finalData = data.split('\n').map((item) => item.trim());
-    
+    let finalData = data.split("\n").map((item) => item.trim());
+    finalData = finalData.filter((item) => item !== "");
 
     setResult(finalData);
+    setQuestion("");
 
   };
 
@@ -38,18 +39,18 @@ function App() {
       <div className="sidebar col-span-1 bg-zinc-700 p-4">
         <h2>Sidebar </h2>
       </div>
-      <div className="main-content col-span-4 p-10">
-        <h1>Main Content</h1>
-        <div className="container h-120 border border-zinc-800 my-4 rounded-lg overflow-y-auto">
+      <div className="main-content col-span-4 p-8">
+        <h1 className="text-pink-600 text-center m-auto text-3xl">Welcome! to ChatGPT(v4)</h1>
+        <div className="container h-120 border border-zinc-800 my-4 px-3 rounded-lg overflow-y-auto">
           <div className="text-white">
-            {/* {result} */}
-            {
-              result && result.map((item, index) => (
-                <div key={index} className="p-2 border-b border-zinc-800">
-                  <Answers ans={item}/>
-                </div>
-              ))
-            }
+            <ul>
+              {result &&
+                result.map((item, index) => (
+                  <li key={index} className="p-2 text-left border-zinc-800">
+                    <Answers ans={item} />
+                  </li>
+                ))}
+            </ul>
           </div>
         </div>
         <div className="bg-zinc-800 flex m-auto w-1/2  text-white p-2 rounded-4xl border border-zinc-600 ">
