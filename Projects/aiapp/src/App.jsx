@@ -26,7 +26,7 @@ function App() {
     });
     let data = await response.json();
     data = data.candidates[0].content.parts[0].text;
-    let finalData = data.split("\n").map((item) => item.trim());
+    let finalData = data.split("* ").map((item) => item.trim());
     finalData = finalData.filter((item) => item !== "");
 
     setResult(finalData);
@@ -65,7 +65,7 @@ function App() {
             <ul>
               {result &&
                 result.map((item, index) => (
-                  <li key={index} className="p-2 text-left border-zinc-800">
+                  <li key={index} className="p-1 text-left border-zinc-800">
                     <Answers ans={item} />
                   </li>
                 ))}
