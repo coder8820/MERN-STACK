@@ -1,24 +1,23 @@
 import { useEffect, useState } from "react";
+import { checkHeading, replaceHeadingStars } from "../helper";
 
 // eslint-disable-next-line no-unused-vars
-const Answers = ({ans,key}) => {
+const Answers = ({ans,index}) => {
   const [heading, setHeading] = useState(null);
+  const [answer, setAnswer] = useState(ans);
 
   useEffect(() =>{
     if(checkHeading(ans)){
       setHeading(true);
+      setAnswer(replaceHeadingStars(ans));
     }
   },[ans])
 
-  function checkHeading(str){
-    const headingRegex = /^(What|How|Why|Explain|Define|Describe|List|Summarize|Compare|Contrast|Discuss|Evaluate|Analyze|Identify|Outline|Review|Assess|Clarify|Illustrate|Interpret|Justify|Recommend|Suggest)\b/i;
-    return headingRegex.test(str);
-  }
 
   return (
     <div>
       {
-        heading ? <h2 className="text-pink-700 text-left text-lg mt-2">{ans}</h2> : <p className="text-zinc-300 text-left mt-2">{ans}</p>
+        heading ? <h2 className="text-pink-700 text-white text-left mt-2">{answer}</h2> : <p className="text-zinc-300 text-left mt-2">{answer}</p>
       }
     </div>
   )

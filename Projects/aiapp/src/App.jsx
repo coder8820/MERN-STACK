@@ -66,7 +66,7 @@ function App() {
               {result &&
                 result.map((item, index) => (
                   <li key={index} className="p-1 text-left border-zinc-800">
-                    <Answers ans={item} />
+                    <Answers ans={item} index={index}/>
                   </li>
                 ))}
             </ul>
