@@ -25,7 +25,7 @@ function App() {
     if(localStorage.getItem('history')){
       let history = JSON.parse(localStorage.getItem('history'));
       history = ([question, ...history]);
-      localStorage.setItem("history", JSON.stringify([history]));
+      localStorage.setItem("history", JSON.stringify(history));
     }else{
       localStorage.setItem("history", JSON.stringify([question]));
       setResentHistory([question]);
@@ -47,41 +47,51 @@ function App() {
       { type: "a", text: dataString },
     ]);
     setQuestion("");
-
   };
+
+  // clear history
+
+  const clearHistory = () => {
+    localStorage.removeItem('history');
+    setResentHistory([]);
+  }
+
+  // search in history
+
+  const searchHistory = (e) =>{
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredHistory = JSON.parse(localStorage.getItem('history')).filter(item => item.toLowerCase().includes(searchTerm));
+    setResentHistory(filteredHistory);
+  }
+
+
 
   return (
     <div className="grid grid-cols-5 h-screen">
       <div className="sidebar col-span-1 bg-zinc-700 p-4">
-        <h2>History</h2>
+        <h2 className="text-3xl">Recent Search</h2>
         <input
           type="text"
           placeholder="Search Data"
+          onChange={searchHistory}
           className="w-full p-2 rounded-lg outline-none bg-zinc-600 text-white border border-zinc-800"
         />
-        <div className="questions">
-         <ul>
-         {recentHistory.length > 0 && recentHistory.map((item,index) => (
-            <li key={index} className="p-1 border border-zinc-800 rounded-lg mb-1 cursor-pointer hover:bg-zinc-600">
+        <button onClick={clearHistory} className="p-1 flex justify-between cursor-pointer bg-zinc-800 rounded mt-1 w-full">History <svg
+         xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
+        <div className="questions text-left ">
+         <ul className="mt-3 max-h-60 overflow-none ">
+         {
+         recentHistory.length > 0 && recentHistory.map((item,index) => (
+            <li key={index} className="p-1 text-blue-400 cursor-pointer hover:bg-zinc-600 overflow-hidden text-ellipsis whitespace-nowrap hover:text-white border-b border-zinc-800">
               {item}
             </li>
           ))}
          </ul>
         </div>
-        <div className="history mt-4">
-          <ul>
-            <li className="p-2 border border-zinc-800 rounded-lg mb-2 cursor-pointer hover:bg-zinc-600">
-              What is AI?
-            </li>
-            <li className="p-2 border border-zinc-800 rounded-lg mb-2 cursor-pointer hover:bg-zinc-600">
-              What is ML?
-            </li>
-            <li className="p-2 border border-zinc-800 rounded-lg mb-2 cursor-pointer hover:bg-zinc-600">
-              What is DL?
-            </li>
-          </ul>
-        </div>
       </div>
+
+      {/*----------   Main Chat Content here ------------  */}
+
       <div className="main-content col-span-4 p-8">
         <h1 className="text-pink-600 text-center m-auto text-3xl">
           Welcome! to ChatGPT(v4)
