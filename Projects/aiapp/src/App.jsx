@@ -5,7 +5,7 @@ import Answers from "./Components/Answers.jsx";
 // const api = "AIzaSyDTmhVVg9q-VLTOt0S7EJRlHZvjA8IVIO4";
 function App() {
   const [question, setQuestion] = useState("");
-  const [result, setResult] = useState(undefined);
+  const [result, setResult] = useState([]);
 
   const payload = {
     contents: [
@@ -24,14 +24,15 @@ function App() {
       method: "POST",
       body: JSON.stringify(payload),
     });
-    let data = await response.json();
-    data = data.candidates[0].content.parts[0].text;
-    let finalData = data.split("* ").map((item) => item.trim());
-    finalData = finalData.filter((item) => item !== "");
+    response = await response.json();
+    let dataString = response.candidates[0].content.parts[0].text;
+    dataString = dataString.split("* ").map((item) => item.trim());
+    dataString = dataString.filter((item) => item !== "");
 
-    setResult(finalData);
+    setResult([...result,{type:"question",text:question},{type:"answer",text:dataString}]);
     setQuestion("");
 
+    console.log(result)
   };
 
   return (
@@ -63,12 +64,12 @@ function App() {
         <div className="container h-120 border border-zinc-700 my-4 px-3 rounded-lg overflow-y-auto">
           <div className="text-white">
             <ul>
-              {result &&
+              {/* {result &&
                 result.map((item, index) => (
-                  <li key={index} className="p-1 text-left border-zinc-800">
+                  <li key={index+Math.random()} className="p-1 text-left border-zinc-800">
                     <Answers ans={item} index={index} totalresult={result.length}/>
                   </li>
-                ))}
+                ))} */}
             </ul>
           </div>
         </div>
