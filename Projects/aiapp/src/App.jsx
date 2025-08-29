@@ -6,7 +6,7 @@ import Answers from "./Components/Answers.jsx";
 function App() {
   const [question, setQuestion] = useState("");
   const [result, setResult] = useState([]);
-  const [recentHistory, setResentHistory] = useState([]);
+  const [recentHistory, setResentHistory] = useState(JSON.parse(localStorage.getItem('history')) || []);
 
   const payload = {
     contents: [
@@ -21,8 +21,16 @@ function App() {
   };
 
   const askQuestion = async () => {
-    localStorage.setItem("history", JSON.stringify([...recentHistory, question]));
-    setResentHistory([...recentHistory, question]);
+    if (question === "") return;
+    if(localStorage.getItem('history')){
+      let history = JSON.parse(localStorage.getItem('history'));
+      history = ([question, ...history]);
+      localStorage.setItem("history", JSON.stringify([history]));
+    }else{
+      localStorage.setItem("history", JSON.stringify([question]));
+      setResentHistory([question]);
+    }
+
     let response = await fetch(URL, {
       method: "POST",
       body: JSON.stringify(payload),
@@ -40,7 +48,6 @@ function App() {
     ]);
     setQuestion("");
 
-    console.log(result);
   };
 
   return (
@@ -52,11 +59,17 @@ function App() {
           placeholder="Search Data"
           className="w-full p-2 rounded-lg outline-none bg-zinc-600 text-white border border-zinc-800"
         />
+        <div className="questions">
+         <ul>
+         {recentHistory.length > 0 && recentHistory.map((item,index) => (
+            <li key={index} className="p-1 border border-zinc-800 rounded-lg mb-1 cursor-pointer hover:bg-zinc-600">
+              {item}
+            </li>
+          ))}
+         </ul>
+        </div>
         <div className="history mt-4">
           <ul>
-            <li className="p-2 border border-zinc-800 rounded-lg mb-2 cursor-pointer hover:bg-zinc-600">
-              Hello
-            </li>
             <li className="p-2 border border-zinc-800 rounded-lg mb-2 cursor-pointer hover:bg-zinc-600">
               What is AI?
             </li>
