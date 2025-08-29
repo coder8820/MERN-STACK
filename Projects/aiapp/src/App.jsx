@@ -69,24 +69,22 @@ function App() {
         <h1 className="text-pink-600 text-center m-auto text-3xl">
           Welcome! to ChatGPT(v4)
         </h1>
-        <div className="container h-120 border border-zinc-700 my-4 px-3 rounded-lg overflow-y-auto">
+        <div className="container h-120 border border-zinc-700 my-4 px-3 rounded-lg overflow-y-scroll">
           <div className="text-white">
             <ul>
               {result.map((item, index) => (
                 <div key={`${index}-${Date.now()}`}>
                   {item.type === "q" ? (
-                    <li className="p-1 text-right text-red-800 border-zinc-800">
-                      <Answers ans={item.text} index={index} totalresult={1} />
+                    <li className="p-2 px-5 text-right bg-zinc-700 text-black border border-zinc-800 rounded-tl-3xl rounded-br-3xl rounded-bl-3xl my-2 w-fit ml-auto">
+                      <Answers ans={item.text} index={index} totalresult={1} type={item.type} />
                     </li>
                   ) : (
                     item.text.map((ansItem, ansIndex) => (
-                      <li
-                        key={ansIndex}
-                        className="p-1 text-left border-zinc-800"
-                      >
+                      <li key={ansIndex} className="p-2 text-left bg-zinc-800 ">
                         <Answers
                           ans={ansItem}
                           index={ansIndex}
+                          type={item.type}
                           totalresult={item.text.length}
                         />
                       </li>
