@@ -29,19 +29,25 @@ function App() {
     dataString = dataString.split("* ").map((item) => item.trim());
     dataString = dataString.filter((item) => item !== "");
 
-    setResult([...result,{type:"question",text:question},{type:"answer",text:dataString}]);
+    setResult([
+      ...result,
+      { type: "q", text: question },
+      { type: "a", text: dataString },
+    ]);
     setQuestion("");
 
-    console.log(result)
+    console.log(result);
   };
 
   return (
     <div className="grid grid-cols-5 h-screen">
       <div className="sidebar col-span-1 bg-zinc-700 p-4">
         <h2>History</h2>
-        <input type="text" placeholder="Search Data"
+        <input
+          type="text"
+          placeholder="Search Data"
           className="w-full p-2 rounded-lg outline-none bg-zinc-600 text-white border border-zinc-800"
-         />
+        />
         <div className="history mt-4">
           <ul>
             <li className="p-2 border border-zinc-800 rounded-lg mb-2 cursor-pointer hover:bg-zinc-600">
@@ -60,16 +66,34 @@ function App() {
         </div>
       </div>
       <div className="main-content col-span-4 p-8">
-        <h1 className="text-pink-600 text-center m-auto text-3xl">Welcome! to ChatGPT(v4)</h1>
+        <h1 className="text-pink-600 text-center m-auto text-3xl">
+          Welcome! to ChatGPT(v4)
+        </h1>
         <div className="container h-120 border border-zinc-700 my-4 px-3 rounded-lg overflow-y-auto">
           <div className="text-white">
             <ul>
-              {/* {result &&
-                result.map((item, index) => (
-                  <li key={index+Math.random()} className="p-1 text-left border-zinc-800">
-                    <Answers ans={item} index={index} totalresult={result.length}/>
-                  </li>
-                ))} */}
+              {result.map((item, index) => (
+                <div key={`${index}-${Date.now()}`}>
+                  {item.type === "q" ? (
+                    <li className="p-1 text-right text-red-800 border-zinc-800">
+                      <Answers ans={item.text} index={index} totalresult={1} />
+                    </li>
+                  ) : (
+                    item.text.map((ansItem, ansIndex) => (
+                      <li
+                        key={ansIndex}
+                        className="p-1 text-left border-zinc-800"
+                      >
+                        <Answers
+                          ans={ansItem}
+                          index={ansIndex}
+                          totalresult={item.text.length}
+                        />
+                      </li>
+                    ))
+                  )}
+                </div>
+              ))}
             </ul>
           </div>
         </div>
