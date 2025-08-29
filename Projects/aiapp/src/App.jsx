@@ -6,6 +6,7 @@ import Answers from "./Components/Answers.jsx";
 function App() {
   const [question, setQuestion] = useState("");
   const [result, setResult] = useState([]);
+  const [recentHistory, setResentHistory] = useState([]);
 
   const payload = {
     contents: [
@@ -20,6 +21,8 @@ function App() {
   };
 
   const askQuestion = async () => {
+    localStorage.setItem("history", JSON.stringify([...recentHistory, question]));
+    setResentHistory([...recentHistory, question]);
     let response = await fetch(URL, {
       method: "POST",
       body: JSON.stringify(payload),
@@ -28,6 +31,7 @@ function App() {
     let dataString = response.candidates[0].content.parts[0].text;
     dataString = dataString.split("* ").map((item) => item.trim());
     dataString = dataString.filter((item) => item !== "");
+
 
     setResult([
       ...result,
@@ -75,7 +79,7 @@ function App() {
               {result.map((item, index) => (
                 <div key={`${index}-${Date.now()}`}>
                   {item.type === "q" ? (
-                    <li className="p-2 px-5 text-right bg-zinc-700 text-black border border-zinc-800 rounded-tl-3xl rounded-br-3xl rounded-bl-3xl my-2 w-fit ml-auto">
+                    <li className="p-2 px-5 text-right bg-zinc-700 border border-zinc-800 rounded-tl-3xl rounded-br-3xl rounded-bl-3xl my-2 w-fit ml-auto">
                       <Answers ans={item.text} index={index} totalresult={1} type={item.type} />
                     </li>
                   ) : (

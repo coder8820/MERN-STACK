@@ -17,7 +17,7 @@ const Answers = ({ans,totalresult,type,index}) => {
     <>
       {
         index === 0 && totalresult>1 ? <span className="2xl">{answer}</span>:
-         heading ? <span className="text-pink-700 text-white text-left mt-1">{answer}</span> : <span className={type==="q"?"pl-1":'pl-5'}>{answer}</span>
+         heading ? <span className="text-white text-left mt-1">{answer}</span> : <span className={type==="q"?"pl-1":'pl-5'}>{answer}</span>
       }
     </>
   )
