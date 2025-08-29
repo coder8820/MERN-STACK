@@ -16,8 +16,8 @@ const Answers = ({ans,totalresult,index}) => {
   return (
     <>
       {
-        index === 0 && totalresult>1 ? <span className="3xl">{answer}</span>:
-         heading ? <h2 className="text-pink-700 text-white text-left mt-1">{answer}</h2> : <p className="text-zinc-300 text-left mt-1">{answer}</p>
+        index === 0 && totalresult>1 ? <span className="2xl">{answer}</span>:
+         heading ? <h2 className="text-pink-700 text-white text-left mt-1">{answer}</h2> : <p className="text-zinc-300 text-left">{answer}</p>
       }
     </>
   )
