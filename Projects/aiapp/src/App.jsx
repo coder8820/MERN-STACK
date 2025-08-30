@@ -427,7 +427,7 @@ function App() {
         
         <div className="container h-96 border border-zinc-600/50 my-4 px-4 py-3 rounded-3xl overflow-y-auto bg-gradient-to-b from-zinc-800/40 to-zinc-900/40 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500">
           <div className="text-white">
-            <ul className="space-y-1">
+            <ul className="space-y-4">
               {result.map((item, index) => (
                 <div 
                   key={`${index}-${Date.now()}`}
@@ -435,9 +435,9 @@ function App() {
                   style={{animationDelay: `${index * 0.2}s`}}
                 >
                   {item.type === "q" ? (
-                    <li className="flex items-start justify-end space-x-1 animate-slideInRight">
+                    <li className="flex items-start justify-end space-x-3 animate-slideInRight">
                       <CopyButton text={item.text} type="q" />
-                      <div className="p-1 px-1 text-right bg-gradient-to-r from-blue-600 to-purple-600 border border-blue-500/30 rounded-1xl rounded-br-lg max-w-lg shadow-xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:scale-[1.02] relative overflow-hidden">
+                      <div className="p-2 px-6 text-right bg-gradient-to-r from-blue-600 to-purple-600 border border-blue-500/30 rounded-3xl rounded-br-lg max-w-lg shadow-xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:scale-[1.02] relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 animate-shimmer-slow"></div>
                         <div className="relative z-10">
                           <Answers ans={item.text} index={index} totalresult={1} type={item.type} />
@@ -445,10 +445,10 @@ function App() {
                       </div>
                     </li>
                   ) : (
-                    <li className="flex items-start space-x-3 animate-slideInLeft">
-                      <div className="p-6 text-left bg-gradient-to-br from-emerald-700/80 to-emerald-800/80 rounded-3xl rounded-bl-lg w-full shadow-xl border border-emerald-600/30 hover:border-emerald-500/50 transition-all duration-300 transform hover:scale-[1.005] relative overflow-hidden backdrop-blur-sm">
+                    <li className="flex items-start animate-slideInLeft">
+                      <div className="p-2 text-left bg-zinc-800 from-emerald-700/80 to-emerald-800/80 rounded-2xl rounded-bl-lg w-full shadow-xl border border-emerald-600/30 hover:border-emerald-500/50 transition-all duration-300 transform hover:scale-[1.005] relative overflow-hidden backdrop-blur-sm">
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/5 to-emerald-300/5 animate-shimmer-slow"></div>
-                        <div className="relative z-10 space-y-3">
+                        <div className="relative z-10">
                           <FormattedAnswer text={item.text} />
                         </div>
                       </div>
