@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { URL } from "./const.js";
 import Answers from "./Components/Answers.jsx";
@@ -7,29 +7,43 @@ function App() {
   const [question, setQuestion] = useState("");
   const [result, setResult] = useState([]);
   const [recentHistory, setResentHistory] = useState(JSON.parse(localStorage.getItem('history')) || []);
-
-  const payload = {
-    contents: [
-      {
-        parts: [
-          {
-            text: question,
-          },
-        ],
-      },
-    ],
-  };
+  const [selectedHistory, setSelectedHistory] = useState(null);
 
   const askQuestion = async () => {
-    if (question === "") return;
-    if(localStorage.getItem('history')){
-      let history = JSON.parse(localStorage.getItem('history'));
-      history = ([question, ...history]);
-      localStorage.setItem("history", JSON.stringify(history));
-    }else{
-      localStorage.setItem("history", JSON.stringify([question]));
-      setResentHistory([question]);
+    if (!question && !selectedHistory) return false;
+
+    // Determine the current question text
+    const currentQuestion = question || selectedHistory;
+    
+    // Only add to history if it's a new question (not from history)
+    if(question) {
+      if(localStorage.getItem('history')){
+        let history = JSON.parse(localStorage.getItem('history'));
+        history = [question, ...history];
+        localStorage.setItem("history", JSON.stringify(history));
+        setResentHistory(history);
+      } else {
+        localStorage.setItem("history", JSON.stringify([question])); // Fixed: was [history]
+        setResentHistory([question]);
+      }
     }
+
+    // Clear selections
+    setSelectedHistory(null);
+    setQuestion("");
+
+    // API call with the current question
+    const payload = {
+      contents: [
+        {
+          parts: [
+            {
+              text: currentQuestion, // Fixed: use currentQuestion instead of question
+            },
+          ],
+        },
+      ],
+    };
 
     let response = await fetch(URL, {
       method: "POST",
@@ -40,31 +54,41 @@ function App() {
     dataString = dataString.split("* ").map((item) => item.trim());
     dataString = dataString.filter((item) => item !== "");
 
-
     setResult([
       ...result,
-      { type: "q", text: question },
+      { type: "q", text: currentQuestion }, // Fixed: use currentQuestion
       { type: "a", text: dataString },
     ]);
-    setQuestion("");
   };
 
   // clear history
-
   const clearHistory = () => {
     localStorage.removeItem('history');
     setResentHistory([]);
   }
 
   // search in history
-
-  const searchHistory = (e) =>{
+  const searchHistory = (e) => {
     const searchTerm = e.target.value.toLowerCase();
-    const filteredHistory = JSON.parse(localStorage.getItem('history')).filter(item => item.toLowerCase().includes(searchTerm));
-    setResentHistory(filteredHistory);
+    const storedHistory = JSON.parse(localStorage.getItem('history')) || [];
+    
+    if (searchTerm === '') {
+      // If search is empty, show all history
+      setResentHistory(storedHistory);
+    } else {
+      // Filter history based on search term
+      const filteredHistory = storedHistory.filter(item => 
+        typeof item === 'string' && item.toLowerCase().includes(searchTerm)
+      );
+      setResentHistory(filteredHistory);
+    }
   }
 
-
+  useEffect(() => {
+    if(selectedHistory) {
+      setQuestion(selectedHistory);
+    }
+  }, [selectedHistory]);
 
   return (
     <div className="grid grid-cols-5 h-screen">
@@ -76,17 +100,24 @@ function App() {
           onChange={searchHistory}
           className="w-full p-2 rounded-lg outline-none bg-zinc-600 text-white border border-zinc-800"
         />
-        <button onClick={clearHistory} className="p-1 flex justify-between cursor-pointer bg-zinc-800 rounded mt-1 w-full">History <svg
-         xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
+        <button onClick={clearHistory} className="p-1 flex justify-between cursor-pointer bg-zinc-800 rounded mt-1 w-full">
+          History 
+          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3">
+            <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+          </svg>
+        </button>
         <div className="questions text-left ">
-         <ul className="mt-3 max-h-60 overflow-none ">
-         {
-         recentHistory.length > 0 && recentHistory.map((item,index) => (
-            <li key={index} className="p-1 text-blue-400 cursor-pointer hover:bg-zinc-600 overflow-hidden text-ellipsis whitespace-nowrap hover:text-white border-b border-zinc-800">
-              {item}
-            </li>
-          ))}
-         </ul>
+          <ul className="mt-3 max-h-60 overflow-auto">
+            {recentHistory.length > 0 && recentHistory.map((item, index) => (
+              <li 
+                onClick={() => setSelectedHistory(item)} 
+                key={index} 
+                className="p-1 text-blue-400 cursor-pointer hover:bg-zinc-600 overflow-hidden text-ellipsis whitespace-nowrap hover:text-white border-b border-zinc-800"
+              >
+                {typeof item === 'string' ? item : 'Invalid history item'}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
@@ -126,6 +157,7 @@ function App() {
           <input
             type="text"
             value={question}
+            onKeyDown={(e) => e.key === "Enter" && askQuestion()}
             onChange={(e) => setQuestion(e.target.value)}
             placeholder="How can i assist you today!"
             className="w-full outline-none p-2"
