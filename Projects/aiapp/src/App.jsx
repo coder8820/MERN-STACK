@@ -391,7 +391,7 @@ function App() {
                 <li 
                   onClick={() => setSelectedHistory(item)} 
                   key={index} 
-                  className="p-2 text-cyan-300 cursor-pointer hover:bg-gradient-to-r hover:from-zinc-600/50 hover:to-zinc-500/50 overflow-hidden text-ellipsis whitespace-nowrap hover:text-white border border-zinc-700/50 hover:border-cyan-400/50 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/20 animate-slideInLeft backdrop-blur-sm"
+                  className="p-3 text-cyan-300 cursor-pointer hover:bg-gradient-to-r hover:from-zinc-600/50 hover:to-zinc-500/50 overflow-hidden text-ellipsis whitespace-nowrap hover:text-white border border-zinc-700/50 hover:border-cyan-400/50 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/20 animate-slideInLeft backdrop-blur-sm"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
                   <div className="flex items-center justify-between group">
@@ -437,7 +437,7 @@ function App() {
                   {item.type === "q" ? (
                     <li className="flex items-start justify-end space-x-3 animate-slideInRight">
                       <CopyButton text={item.text} type="q" />
-                      <div className="p-2 px-6 text-right bg-gradient-to-r from-blue-600 to-purple-600 border border-blue-500/30 rounded-3xl rounded-br-lg max-w-lg shadow-xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:scale-[1.02] relative overflow-hidden">
+                      <div className="p-4 px-6 text-right bg-gradient-to-r from-blue-600 to-purple-600 border border-blue-500/30 rounded-3xl rounded-br-lg max-w-lg shadow-xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:scale-[1.02] relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 animate-shimmer-slow"></div>
                         <div className="relative z-10">
                           <Answers ans={item.text} index={index} totalresult={1} type={item.type} />
@@ -445,10 +445,10 @@ function App() {
                       </div>
                     </li>
                   ) : (
-                    <li className="flex items-start animate-slideInLeft">
-                      <div className="p-2 text-left bg-zinc-800 from-emerald-700/80 to-emerald-800/80 rounded-2xl rounded-bl-lg w-full shadow-xl border border-emerald-600/30 hover:border-emerald-500/50 transition-all duration-300 transform hover:scale-[1.005] relative overflow-hidden backdrop-blur-sm">
+                    <li className="flex items-start space-x-3 animate-slideInLeft">
+                      <div className="p-2 text-left bg-gradient-to-br from-emerald-700/80 to-emerald-800/80 rounded-3xl rounded-bl-lg w-full shadow-xl border border-emerald-600/30 hover:border-emerald-500/50 transition-all duration-300 transform hover:scale-[1.005] relative overflow-hidden backdrop-blur-sm">
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/5 to-emerald-300/5 animate-shimmer-slow"></div>
-                        <div className="relative z-10">
+                        <div className="relative z-10 space-y-3">
                           <FormattedAnswer text={item.text} />
                         </div>
                       </div>
@@ -482,7 +482,7 @@ function App() {
 
         {/* Ultra-Enhanced input section */}
         <div className="relative group">
-          <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 flex m-auto w-2/3 text-white p-3 rounded-3xl border border-zinc-600/50 shadow-2xl backdrop-blur-xl hover:shadow-cyan-500/20 transition-all duration-500 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 flex m-auto w-2/3 text-white p-2 rounded-3xl border border-zinc-600/50 shadow-2xl backdrop-blur-xl hover:shadow-cyan-500/20 transition-all duration-500 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 animate-shimmer-slow"></div>
             <input
               type="text"
@@ -491,7 +491,7 @@ function App() {
               onKeyDown={(e) => e.key === "Enter" && askQuestion()}
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="How can I assist you today!"
-              className="w-full outline-none p-3 bg-transparent placeholder-gray-400 disabled:opacity-50 transition-all duration-300 relative z-10 text-lg"
+              className="w-full outline-none p-1 bg-transparent placeholder-gray-400 disabled:opacity-50 transition-all duration-300 relative z-10 text-lg"
             />
             <button
               onClick={askQuestion}
@@ -760,7 +760,7 @@ function App() {
         /* Pre-formatted text styles */
         pre {
           font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
-          line-height: 1.6;
+          line-height: 1;
           tab-size: 2;
         }
 
