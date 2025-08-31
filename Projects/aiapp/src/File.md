@@ -29,4 +29,8 @@
 
 # Use Case:
 
+- **E-commerce**: SEO, fast loading boost conversation.
+
+# condlusion:
+- **Netxt.js**: fast, flexible, production ready framework ideal for SEO ,performance and scalable web apps.
 
