@@ -424,7 +424,7 @@ function App() {
 
       <div className="main-content col-span-4 p-8 relative z-10">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-purple-500 to-pink-500 text-center m-auto text-5xl font-bold mb-8 animate-gradient-x hover:animate-pulse transition-all duration-300 cursor-default">
-          Welcome! to ChatGPT(v4)
+          Welcome! proCoder to ChatGPT(v4)
         </h1>
         
         <div className="container h-96 border border-zinc-600/50 my-4 px-4 py-3 rounded-3xl overflow-y-auto bg-gradient-to-b from-zinc-800/40 to-zinc-900/40 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500">
