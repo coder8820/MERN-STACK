@@ -12,3 +12,5 @@
 - **File-base routing**: Routs match file structure
 -**Image Optimization**: Lazy Loading, resizing,WebP Support.
 -**API Routs**: Backend capabilities in the app.
+- **SSR**: Server-Side Rendering Pages for SEO and speed.
+-**SSG**: Static Side content at build-in time.
