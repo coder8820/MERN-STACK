@@ -11,6 +11,22 @@
 # Key Features:
 - **File-base routing**: Routs match file structure
 -**Image Optimization**: Lazy Loading, resizing,WebP Support.
--**API Routs**: Backend capabilities in the app.
+- **API Routs**: Backend capabilities in the app.
 - **SSR**: Server-Side Rendering Pages for SEO and speed.
 -**SSG**: Static Side content at build-in time.
+
+---
+
+# Benifits:
+- **SEO Optimization**: Pre-rendered pages for batter indexing.
+- **Fast Performence**: Faster TTFB, Lazy Loading.
+- **Better UX**: Searmless Navigation, Fast Refresh.
+- **Rich Eco-system**: Large Comunity, React Compatibility.
+
+---
+
+<h1><u>proCoder</u></h1>
+
+# Use Case:
+
+
